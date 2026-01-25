@@ -292,6 +292,9 @@ visualize arrays as ong flat octopuses
     function phi(table) {
   return (table[3] * table[0] - table[2] * table[1]) /
   <br>
+  <br>
+  // add two fields from table to get fields like n1
+  <br>
     Math.sqrt((table[2] + table[3]) *
     <br>
               (table[0] + table[1]) *
@@ -299,11 +302,47 @@ visualize arrays as ong flat octopuses
               (table[1] + table[3]) *
               <br>
               (table[0] + table[2]));
-}
+              <br>
+              <br>
+              console.log(phi([76, 9, 1]));
+              <br>
+              <br>
+              Math.sqrt = square root function
+              <br>
+             
+              <br>
+              <br>
+              sums of rows or columns are not stored in data structure
+
 
 </p>
 <li>
-    console.log(phi([76, 9, 1]));
+    function tableFor(event, journal) {
+        <br>
+        let table = [0, 0, 0, 0];
+        <br>
+        for(let i = 0; i < journal.length; i++) {
+            <br>
+            let entry = journal[i], index = 0;
+            <br>
+            <br>
+            //Arrays have an includes method (checks whether
+            <br>
+            given value exists
+            )
+            <br>
+            
+            if (entry.events.includes(event)) index += 1;
+            <br>
+            if entry.squirrel index += 2;
+            <br>
+            table[index] += 1;
+            <br>
+        }
+        return table;
+    }
+    <br>
+    console.log(tableFor("pizza", JOURNAL));
 </li>
 </ol>
     array loops
