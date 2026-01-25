@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures Objects and Arrays</title>
+</head>
+<body>
+    <p>
+        the weresquirrel
+    - create daily log to show what triggers
+      transformation to squirrel
+<ol>
+    datasets
+   <li>
+    - represents a chunk of digital data
+   </li> 
+   <li>
+       - array stores sequences of values
+   </li>
+   <li>
+    - writtens as list of values between [,,,]
+      seperated by commas
+   </li>
+    
+    
+</ol>
+<script>
+ let listOfNumbers = [2, 3, 5, 7];
+
+      console.log(listOfNumbers[2]);
+      console.log(listOfNumbers[0])
+</script>
+     
+
+    </p>
+    
+
+    <ol>
+        <h3>properties</h3>
+        <li>javascript values have properties
+            exceptions are null and undefined
+        </li>
+        <br>
+        <li>
+            two ways to access properties in json
+            are with a dot and with square brackets
+
+             dot . after word is the literal name of 
+            property 
+            <ul>
+                <li>
+
+                    [] brackets evaluates expression to get 
+                    property name 
+                </li>
+                <li>
+                    value[x] takes value of variable
+                    and converts to a string as property name
+                </li>
+                <li>
+                    value[i] extracts value held in binding i
+                </li>
+            </ul>
+            
+        </li>
+        <br>
+        <li>
+            arrays have length property(tells how many
+            elements an array has)
+        </li>
+    
+           
+        
+    </ol>
+    <ol>
+        <h3>
+
+            methods (properties that hold function values)
+        </h3>
+
+        <li>
+            toUppercase
+        </li>
+        <li>
+            toLowerCase
+        </li>
+        <br>
+        <li>
+            push adds value to end of array
+            <br>
+            <br>
+            let sequence = [1, 2, 3];
+            <br>
+            sequence.push[4];
+        </li>
+        <br>
+        <li>
+            pop removes last 
+            value at end of the array
+            <br>
+            <br>
+            console.log(sequnce.pop());
+        </li>
+    </ol>
+<ol>
+    <h3>
+
+        objects
+    </h3>
+    <li>
+        one way to create an object is using curly braces {}
+        <br>
+        <br>
+
+        write a list of properties seperated by commas
+        <br>
+        <br>
+        let day1 = {
+            <br>
+            squirrel: false,
+            <br>
+            events: ["work", "touched tree", "pizza", "running"]
+            <br>
+        };
+        <script>
+            let day = {
+                squirrel: false,
+                events: ["work", "touched tree", ]
+            }
+            console.log(day.events);
+        </script>
+    </li>
+    <br>
+    <li>
+        delete operator
+        <ul>
+            <br>
+            <li>urnary opertaor will remove
+                <br>
+                named property from object
+            </li>
+            <br>
+            let anObject = {left: 1, right: 2};
+            <br>
+            console.log(anObject.left);
+            <br>
+            <br>
+            delete anObject.left;
+        </ul>
+    </li>
+    <br>
+    <li>
+        binary in operator
+        <ul>
+            <br>
+            <li>tells whether object has a
+                <br>
+                property with that same name
+                <br>
+                <br>
+                console.log("left" in anObject");
+            </li>
+        </ul>
+    </li>
+    <br>
+    <li>
+
+        Object.keys
+        
+        <br>
+        <ul>
+            <li>to find properties in object</li>
+            <p>give function an object 
+                <br>
+                will return an array of strings
+            </p>
+
+            console.log(Object.keys({x: 0, y: 0, z: 2}));
+            <br>
+            // → ["x", "y", "z"]
+
+        </ul>
+
+    </li>
+    <br>
+    <li>
+        Object.assign 
+        <br>
+        <br>
+        <ul>
+            <li> function copies properties
+                <br>
+                from one object to another
+            </li>
+            <br>
+            <br>
+            let objectA = {a: 1, b: 2};
+            <br>
+            
+Object.assign(objectA, {b: 3, c: 4});
+<br>
+console.log(objectA);
+<br>
+// → {a: 1, b: 3, c: 4}
+<script>
+    let objectA = {a: 1, b: 2};
+Object.assign(objectA, {b: 3, c: 4});
+console.log(objectA);
+// → {a: 1, b: 3, c: 4}
+</script>
+        </ol>
+    </li>
+</ol>
+<br>
+<p>summary 
+    <br>arrays are specialized object
+    <br>
+    typeof produces object 
+<br>
+visualize arrays as ong flat octopuses
+</p>
+<ol>
+    <h3>
+        mutability
+    </h3>
+    <li>
+
+        objects can change properties
+    </li>
+    <br>
+    <li>
+        bindings can also be changeable or constant
+        use let binding to keep track of changing number
+    </li>
+    <br>
+    <li>
+        == opertator comapres identity produces true
+        if both values are the same
+    </li>
+</ol>
+<br>
+<ol>
+    <h3>
+        the lycanthropes log
+
+    </h3>
+    let journal = [];
+    <br>
+    function addEntry(events, squirrel) {
+        <br>
+        journal.push({events, squirrel});
+    }
+    <br>
+    <br>
+    <li>
+        correlation: measure of dependence
+        <br>
+        use phi coefficeint()
+    </li>
+    <br>
+    <li>
+        forumula input is a frequency table
+        <br>
+        contains number of times combinations
+        <br>
+        of the variables were observerd
+
+    </li>
+    <br>
+    <li>
+        if table is n01 use phi to compute forumula
+        <br>
+        n: indicates number of measurements
+        <br>
+        where first value is false (0)
+        <br>
+        second variable(pizza) is true(1)
+    </li>
+
+</ol>
+<ol>
+    
+</ol>
+<ol>
+<h3>
+
+    computing correlation
+</h3>
+<p>
+    function phi(table) {
+  return (table[3] * table[0] - table[2] * table[1]) /
+  <br>
+    Math.sqrt((table[2] + table[3]) *
+    <br>
+              (table[0] + table[1]) *
+              <br>
+              (table[1] + table[3]) *
+              <br>
+              (table[0] + table[2]));
+}
+
+</p>
+<li>
+    console.log(phi([76, 9, 1]));
+</li>
+</ol>
+    array loops
+    final analysis
+    further arrayology
+    strings and their properties
+    rest parameters
+    the math object
+    destructuring
+    optional property access
+    json
+    summary
+    exercises
+    the sum of a range
+    reversing an array
+    a list
+    deep comparision
+
+    
+</body>
+</html>
