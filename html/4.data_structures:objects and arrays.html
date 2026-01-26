@@ -326,13 +326,13 @@ visualize arrays as ong flat octopuses
             let entry = journal[i], index = 0;
             <br>
             <br>
-            //Arrays have an includes method (checks whether
+            //Arrays have an <em>includes</em> method (checks whether
             <br>
             given value exists
             )
             <br>
-            
-            if (entry.events.includes(event)) index += 1;
+           
+            if (entry.events. <em>includes</em>(event)) index += 1;
             <br>
             if entry.squirrel index += 2;
             <br>
@@ -342,8 +342,27 @@ visualize arrays as ong flat octopuses
         return table;
     }
     <br>
+    <br>
     console.log(tableFor("pizza", JOURNAL));
+
+    <br>
+    <br>
+    common loop in javascript
+    <br>
+    going over arrays one element
+    <br>
+    at a time
+    <br>
+    simpler way to write a loops
+    for(let entry of JOURNAL) {
+        console.log(`${entry.events.length} events.`);
+    }
+
+    <br>
+    <br>
+    word of in a for loop = will loop over elements of the value after of
 </li>
+
 </ol>
     array loops
     final analysis
