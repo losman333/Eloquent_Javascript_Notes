@@ -331,6 +331,7 @@ visualize arrays as ong flat octopuses
             given value exists
             )
             <br>
+            <br>
            
             if (entry.events. <em>includes</em>(event)) index += 1;
             <br>
@@ -340,6 +341,7 @@ visualize arrays as ong flat octopuses
             <br>
         }
         return table;
+        <br>
     }
     <br>
     <br>
@@ -352,9 +354,20 @@ visualize arrays as ong flat octopuses
     going over arrays one element
     <br>
     at a time
+    <br>]
     <br>
+    for (let i = 0; i < JOURNAL.length; i++) {
+     <br>
+       let entry = JOURNAL[i] index = 0;
+<br>
+  // Do something with entry
+
+  <br>
+<br>
     simpler way to write a loops
-    for(let entry of JOURNAL) {
+    <br>
+    for(let entry <em>of</em> JOURNAL) {
+        <br>
         console.log(`${entry.events.length} events.`);
     }
 
@@ -363,11 +376,76 @@ visualize arrays as ong flat octopuses
     word of in a for loop = will loop over elements of the value after of
 </li>
 
+
+
 </ol>
-    array loops
-    final analysis
-    further arrayology
-    strings and their properties
+<ol>
+
+    <h3>
+    
+        final analysis
+    </h3>
+    <li>
+
+    </li>
+</ol>
+
+<ol>
+    <h3>
+        strings and their properties   
+    </h3>
+    <li>
+        compute correlation for every type of event 
+        <br>
+
+        function journalEvents(journal) {
+            <br>
+            let events = [];
+            <br>
+            for (let entry of journal) {
+                <br>
+                for (let event of entry.events) {
+                    <br>
+                    if(!events.includes(events)) {
+                        <br>
+                        events.push(event);
+                        <br>
+                    }
+                    <br>
+                }
+                <br>
+            }
+            <br>
+            return events;
+        }
+
+        console.log(journalEvents(JOURNAL));
+        that occurs in data set
+        <br>
+        find every <em>type</em> of event
+
+        <br>
+        filter events results to show corre greater than 0.1 than -0.1
+
+    </li>
+    <script>
+        function journalEvents(journal) {
+  let events = [];
+  for (let entry of journal) {
+    for (let event of entry.events) {
+      if (!events.includes(event)) {
+        events.push(event);
+      }
+    }
+  }
+  return events;
+}
+
+console.log(journalEvents(JOURNAL));
+    </script>
+</ol>
+
+
     rest parameters
     the math object
     destructuring
