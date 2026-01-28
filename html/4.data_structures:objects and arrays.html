@@ -327,10 +327,13 @@ visualize arrays as ong flat octopuses
         for(let i = 0; i < journal.length; i++) {
             let entry = journal[i], index = 0;
             <br>
-            
+            <br>
+            //Arrays have an includes method (checks whether
+            <br>
+            given value exists
             )
             <br>
-        
+            
             if (entry.events.includes(event)) index += 1;
             <br>
             if entry.squirrel index += 2;
@@ -339,27 +342,276 @@ visualize arrays as ong flat octopuses
             <br>
         }
         return table;
+        <br>
     }
     <br>
+    <br>
     console.log(tableFor("pizza", JOURNAL));
-    <br>
-    <br>
-   //Arrays have an includes method (checks whether given value exists)
-   <br>
-   //used to determine whether event name is 
-            part of the event list given for day
-            <br>
-            // loop over all entries tally how many times
-            <br>
-        //the event occurs in relation to squirrel transformations
-          
 </li>
+
+
+
 </ol>
-    array loops
-    final analysis
-    further arrayology
-    strings and their properties
-    rest parameters
+<ol>
+
+    <h3>
+    
+        final analysis
+    </h3>
+    <li>
+
+    </li>
+</ol>
+
+<ol>
+    <h3>
+        strings and their properties   
+    </h3>
+    <br>
+    <li>
+        compute correlation for every type of event 
+        <br>
+                that occurs in data set
+<br>
+<br>
+        function journalEvents(journal) {
+            <br>
+            let events = [];
+            <br>
+            for (let entry of journal) {
+                <br>
+                for (let event of entry.events) {
+                    <br>
+                    if(!events.includes(events)) {
+                        <br>
+                        events.push(event);
+                        <br>
+                    }
+                    <br>
+                }
+                <br>
+            }
+            <br>
+            return events;
+        }
+<br>
+        console.log(journalEvents(JOURNAL));
+        <br>
+        find every <em>type</em> of event
+
+        <br>
+        filter events results to show corre greater than 0.1 than -0.1
+
+    </li>
+    <script>
+        function journalEvents(journal) {
+  let events = [];
+  for (let entry of journal) {
+    for (let event of entry.events) {
+      if (!events.includes(event)) {
+        events.push(event);
+      }
+    }
+  }
+  return events;
+}
+
+console.log(journalEvents(JOURNAL));
+    </script>
+
+    <li>
+        adding any event names that arent already in it to
+        <br>
+        events array
+        function collects every type of event use function 
+        <br>
+        to see all correlations
+    </li>
+
+    <script>
+        for (let event of journalEvents(JOURNAL)) {
+  console.log(event + ":", phi(tableFor(event, JOURNAL)));
+}
+    </script>
+
+</ol>
+
+<ol>
+    <li>
+        a loop that goes through every journal event
+    </li>
+    <ul>
+        <li> loop through entries of journal</li>
+        <br>
+
+        <li>
+            if the entry events includes peanuts 
+            <br>
+            and not brushing your teeth
+        </li>
+        <br>
+        <li>
+            we add peanut teeth to entry events
+            <br>
+            using push 
+        </li>
+
+        <li>
+            display the results using tableFor using phi
+            <br>
+            ("peanut teeth", JOURNAL)
+        </li>
+
+
+
+
+    </ul>
+
+
+   <script>
+    for(let entry of JOURNAL) {
+        if (entry.events.includes("peanutes") &&
+        !entry.events.includes("brushed teeth")) {
+            entry.events.push("peanut teeth");
+        }
+    }
+
+    console.log(phi(tableFor("peanut teeth", JOURNAL)));
+   </script>
+</ol>
+
+<ol>
+    <script>
+        let todoList = [];
+        function remember(task) {
+        todoList.push(task);
+        }
+        function getTask() {
+        return todoList.shift();
+        }
+        function rememberUrgently(task) {
+        todoList.unshift(task);
+        }
+    </script>
+    <h3>
+        Further Arraylology
+    </h3>
+
+    <li>
+        unshift = removes element from array
+        <br>
+        at begining of array
+    </li>
+    let todoList = [];
+    <br>
+    <br>
+    <li>
+        shift = element to begining of array
+    </li>
+    <br>
+    <li>
+        remember = adds to the end of queue
+    </li>
+    <br>
+    <li>
+        remember urgently = adds task to front
+    </li>
+    <br>
+    <li>
+        indexOf = searches specific value 
+        <br>
+        searches from start to end
+    </li>
+    <br>
+    <br>
+    console.log([1, 2, 3, 2, 1].indexOf(2))
+
+    <li>
+        lastIndexOf = searches the end instead of start
+        <br>
+    </li>
+    console.log([1, 2, 3, 2, 1].lastIndexOf(2));
+    <br>
+
+    <li>
+        both indexOf and lastIndexOf take an optional
+        <br>
+        second arguement that indicates where to search
+    </li>
+    <li>
+        slice
+        <ul>
+            <li>takes start and end indices 
+                <br>
+                takes start and end indices
+                <br>
+                and returns an array 
+                <br>
+                <br>
+                console.log([0, 1, 2, 3, 4].slice(2, 4));
+                <br>
+                <br>
+                that has only the elements between them
+                <br>
+                start index is inclusive and end is exclusive
+                <br>
+                when index is not given slice will take all of
+                <br>
+                the elements after the start index
+            </li>
+        </ol>
+    </li>
+    <br>
+    <li>
+        concat
+        <ul>
+            used to append arrays togeter
+            <br>
+            creates new array
+            <br>
+            similar to + operator for strings
+<li>
+    concat and slice in action
+
+    function remove(array, index) {
+        <br>
+        return array.slice(0, index)
+        <br>
+            .concat(array.slice(index + 1));
+
+    }
+    <br>
+    <br>
+    console.log(remove(["a", "b", "c", "d", "d"], 2));
+
+</li>
+
+        </ol>
+       
+    </li>
+</ol>
+
+<ol>
+    <h3>
+        strings and their properties
+    </h3>
+</ol>
+
+<ol>
+    <h3>
+        rest parameters
+    </h3>
+
+    <li>function can accept any number of arguments</li>
+    <br>
+    Math.max computes the maximum of all arguments
+    <br>
+    put three dots ... in the functions parameter 
+
+    function max(..)
+</ol>
+
+
     the math object
     destructuring
     optional property access
