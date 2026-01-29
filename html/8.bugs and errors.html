@@ -6,12 +6,125 @@
     <title>Bugs and Errors</title>
 </head>
 <body>
-    Language
-    strict
-    types
-    testing
-    debugging
-    error propagation
+    <ol>
+        <h3>Language</h3>
+        <br>
+        <li>
+            finding mistakes = debugging
+        </li>
+    </ol>
+    <br>
+    <ol>
+
+        <h3>strict mode</h3>
+        <li>
+            "use strict" at top of file or function body"
+        </li>
+        <br>
+        <li>
+            strict mode = disallows giving a function multiple
+            <br>
+            parameteres with same name
+            <br>
+        </li>
+        <br>
+        <li>
+            removes certain problematic
+            <br>
+            language features
+        </li>
+        <br>
+        <li>
+
+        </li>
+        <script>
+            function canYouSpotTheProblem() {
+  "use strict";
+  for (counter = 0; counter < 10; counter++) {
+    console.log("Happy happy");
+  }
+}
+
+canYouSpotTheProblem();
+// → ReferenceError: counter is not defined
+        </script>
+        <li>
+
+        </li>
+    </ol>
+    <br>
+    <ol>
+
+        <h3>types</h3>
+        <li>
+            useful framing for talking
+            <br>
+            about programs
+            <br>
+        </li>
+        <br>
+        <li>
+            <em>
+                type variable = stands in for any type
+            </em>
+            <br>
+            ex( randomPick (T[]))
+        </li>
+        <br>
+        <li>
+            Javascript dialects add types to 
+            <br>
+            language ex. TypeScript
+        </li>
+    </ol>
+    <br>
+    <ol>
+        <h3>testing</h3>
+        <li>
+            test take form of labled program
+            <br>
+            to verify some aspect of codeo
+        </li>
+        <br>
+        <li>
+            test suites = provides language in form
+            <br>
+            of functions and methods
+            <br>
+            called test runners
+            <br>
+            <ul>
+                <li>suited to expressing tests
+                    outputting informative information
+                    <br>when test fails called <em>test runners</em>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <br>
+    <ol>
+
+        <h3>debugging</h3>
+        <li>debugger statement</li>
+    </ol>
+    <br>
+    <ol>
+
+        <h3>error propagation</h3>
+
+        <li>
+            return special values has 2 downsides
+            <ul>
+                <li>
+                    can return every kind of value
+                </li>
+                <br>
+                <li>
+                    leads to awkward code
+                </li>
+            </ol>
+        </li>
+    </ol>
     exception
     cleaning up after exceptions
     selective catching
