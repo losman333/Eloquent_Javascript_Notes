@@ -577,14 +577,27 @@ console.log(journalEvents(JOURNAL));
     <br>
     <li>
         concat
+        <br>
         <ul>
             used to append arrays togeter
             <br>
             creates new array
             <br>
             similar to + operator for strings
+            <br>
+            <br>
 <li>
     concat and slice in action
+    <br>
+    takes an array and index and returns a new array
+    <br>
+    that is a copy of the original array with 
+    <br>
+    the element at the given index removed
+    <br>
+    <br>
+
+
 
     function remove(array, index) {
         <br>
@@ -608,6 +621,24 @@ console.log(journalEvents(JOURNAL));
     <h3>
         strings and their properties
     </h3>
+    <br>
+    <ol>
+        <li>
+            trim
+        </li>
+        <br>
+        <li>
+            padStart
+        </li>
+        <br>
+        <li>
+            split
+        </li>
+        <br>
+        <li>
+            join
+        </li>
+    </ol>
 </ol>
 
 <ol>
@@ -624,12 +655,194 @@ console.log(journalEvents(JOURNAL));
     function max(..)
 </ol>
 
-
+<ol>
+<h3>
     the math object
-    destructuring
-    optional property access
-    json
-    summary
+</h3>
+<br>
+<li>
+    Math.min
+</li>
+<br>
+<li>
+    Math.min = min
+</li>
+<br>
+<li>
+    Math.sqrt = sqrt
+</li>
+<br>
+<li>
+    Math.cos = cosine
+</li>
+<br>
+<li>
+    Math.sin = sin
+</li>
+<br>
+<li>
+    Math.tan = tan
+</li>
+<br>
+<li>
+    Math.acos
+</li>
+<br>
+<li>
+    Math.asin
+</li>
+<br>
+<li>
+    Math.atan
+</li>
+<br>
+<li>
+    Math.PI
+</li>
+<br>
+<li>
+    Math.random
+</li>
+<br>
+<li>
+    Math.floor
+</li>
+<br>
+<li>
+    Math.ceil 
+</li>
+<br>
+<li>
+    Math.round
+</li>
+<br>
+<li>
+    Math.abs
+</li>
+<br>
+</ol>
+
+<ol>
+
+   <h3>
+       destructuring
+    </h3> 
+    <br>
+    <li>
+        binding is pointing at the array
+    </li>
+    <script>
+        function phi(table) {
+            return (table[3] * table[0] - table[2] * table[1]) /
+                Math.sqrt((table[2] + table[3]) *
+                        (table[0] + table[1]) *
+                        (table[1] + table[3]) *
+                        (table[0] + table[2]));
+        }
+    </script>
+    <br>
+    <li>
+        use square brackets to look inside of a value 
+        <br>
+        binding its content
+    </li>
+    <br>
+    <script>
+        function phi([n00, n01, n10, n11]) {
+        return (n11 * n00 - n10 * n01) /
+            Math.sqrt((n10 + n11) * (n00 + n01) *
+                    (n01 + n11) * (n00 + n10));
+        }
+    </script>
+    <li>
+        similar for objects
+        <br>
+        use brackets
+
+    </li>
+    <br>
+</ol>
+
+<br>
+
+<ol>
+
+    <h3>
+        optional property access
+    </h3>
+    <br>
+    <li>
+        object?.property
+    </li>
+    <br>
+    <li>
+        a?.b
+    </li>
+    <br>
+    <li>
+        ?.
+    </li>
+    
+
+
+</ol>
+    <ol>
+        <h3>
+            json
+        </h3>
+        <li>
+            serializing
+        </li>
+        <br>
+        <li>
+            properties are surrounded by quotes
+        </li>
+        <br>
+        <li>
+            JSON.stringify = takes a value returns
+            <br>
+            JSON encoded string
+        </li>
+        <br>
+        <li>
+            JSON.parse = takes a string and converts it
+            <br>
+            the value it encodes
+        </li>
+        <br>
+
+        
+    </ol>
+    <h3>
+
+        summary
+    </h3>
+
+    <ol>
+        <li>
+            Property values
+        </li>
+        <br>
+        <li>
+            properties accessed using value.prop
+            <br>
+
+        </li>
+        <br>
+        <li>
+            array properties = length and number of methods
+            <br>
+            live in the properties act on the value 
+            
+        </li>
+        <li>
+            iterate over arrays using a let in a foor loop
+            <br>
+
+        </li>
+    </ol>
+    <br>
+    
     exercises
     the sum of a range
     reversing an array
