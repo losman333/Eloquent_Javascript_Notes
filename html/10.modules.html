@@ -1,0 +1,53 @@
+<ol>
+    <li>Modular Programs</li>
+    <br>
+    <ul>
+        <li><b>Modules</b> = piece of program that 
+            specifies which other pieces it relies on
+            <br>
+            which functionality it provides for other
+            <br>
+            modules to use (its interface)
+        </li>
+    </ul>
+    <br>
+    <li>ES Modules</li>
+    <ul>
+        <li><b>Scripts</b> = bindings are defined in global scope</li>
+        <li><b>Modules</b> = seperate scope support <b>import</b> and <b>export</b> keywords</li>
+        <li><b>export</b> = can be put in front of a function, class
+            <br>
+            or binding definition to indicate binding is part of modules
+            <br>
+            interface
+            <p>export function dayName(number) {</p>
+        </li>
+        <li><b>import</b> = makes bindings from another module available
+            <br>
+            in current mode, identfied by quoted strings
+            <br>
+            
+            <p>import {dayName} from "./dayname.js";</p>
+        </li>
+        <br>
+        <li>
+            export default = before expression
+            <br>
+            used for modules
+            <br>
+            that only export single binding
+        </li>
+        <br>
+        <li>
+            import * asterik = imports all binding from module
+            <br>
+            at the same time
+            <br>
+            usefule when using a lot of different exports
+        </li>
+    </ul>
+    <li>Packages</li>
+    <li>CommonJS Modules</li>
+    <li>Module Design</li>
+    <li>Excercises</li>
+</ol>
