@@ -83,7 +83,7 @@ canYouSpotTheProblem();
         <li>
             test take form of labled program
             <br>
-            to verify some aspect of codeo
+            to verify some aspect of code
         </li>
         <br>
         <li>
@@ -125,11 +125,214 @@ canYouSpotTheProblem();
             </ol>
         </li>
     </ol>
-    exception
-    cleaning up after exceptions
-    selective catching
-    assertions
-    summary
+    <ol>
+        <h3>exception</h3>
+        <li>
+            excepetions = mechanism that raise or throw exceptions
+        </li>
+        <br>
+        <li>
+            <em><b>unwinding the stack</b></em>
+        </li>
+        <br>
+        <li>
+            set obstacles along the stack to catch exception
+        </li>
+
+        <br>
+        <script>
+            function promptDirection(question) {
+                let result = prompt(question);
+                if (result.toLowerCase() == "left") return "L";
+                if (result.toLowerCase() == "right") return "R";
+                throw new Error("Invalid direction: " + result);
+                }
+
+                function look() {
+                if (promptDirection("Which way?") == "L") {
+                    return "a house";
+                } else {
+                    return "two angry bears";
+                }
+                }
+
+                try {
+                console.log("You see", look());
+                } catch (error) {
+                console.log("Something went wrong: " + error);
+                }
+        </script>
+        <br>
+        <li>
+            <b>throw</b> = keyword used to raise an exception
+            <br>
+            <br>
+            wrap code in a try block followed by keyword catch
+            <br>
+            <br>
+            <ul>
+                <li>
+                    code causes exception to be raised
+                </li>
+                <br>
+                <li>
+                    catch block is evaluated with name in
+                    <br>
+                    parentheses bound to the exception value
+                </li>
+                <br>
+                <li>
+                    after catch block finishes or try finishes 
+                    <br>
+                    without problems, program proceeds beneath 
+                    <br>
+                    entire try/catch statement
+                </li>
+            </ul>
+        </li>
+        <br>
+        <li>
+            error constructor creates object with message
+            <br>
+            property
+        </li>
+        <br>
+        <li>
+            instances of Error also gather informations
+            <br>
+            about call stack that existed when exception
+            <br>
+            was created, called stack trace
+            <br>
+            info stored in stack property
+        </li>
+        <br>
+        <li>
+            look function ignores prompt direction might go wrong
+        </li>
+        <br>
+
+    </ol>
+    <br>
+    <ol>
+
+        <h3>cleaning up after exceptions</h3>
+        <br>
+        <li>
+            <b>Finally</b> = runs code after trying to run
+            <br>
+            code in the try block
+            <br>
+        </li>
+        <br>
+        <script>
+            function transfer(from, amount) {
+                if (accounts[from] < amount) return;
+                let progress = 0;
+                try {
+                    accounts[from] -= amount;
+                    progress = 1;
+                    accounts[getAccount()] += amount;
+                    progress = 2;
+                } finally {
+                    if (progress == 1) {
+                    accounts[from] += amount;
+                    }
+                }
+                }
+        </script>
+        <li>
+            finally code is run when exception is thrown
+            <br>
+            into try block does not interfere with exception
+            <br>
+            after finally block runs stack continues unwinding
+        </li>
+    </ol>
+    <br>
+    <ol>
+
+        <h3>selective catching</h3>
+        <br>
+        <li>
+            how to catch a specfic kind of exception? 
+            <br>
+            <ul>
+                <li>define a new type of error use used instanceOf to identify</li>
+            </ul>
+
+        </li>
+        <br>
+        <script>
+            class InputError extends Error {}
+
+            function promptDirection(question) {
+            let result = prompt(question);
+            if (result.toLowerCase() == "left") return "L";
+            if (result.toLowerCase() == "right") return "R";
+            throw new InputError("Invalid direction: " + result);
+            }
+        </script>
+    </ol>
+    <br>
+    <ol>
+        <h3>
+            assertions
+        </h3>
+        <br>
+        <li>
+            <b>assertions</b> = checks inside program verifies 
+            <br>
+            something is the way it is supposed to be
+            <br>
+            used to find programmer mistakes
+        </li>
+        <br>
+        <script>
+            function firstElement(array) {
+                if (array.length == 0) {
+                    throw new Error("firstElement called with []");
+                }
+                return array[0];
+            }
+        </script>
+        <em>use for mistakes that are easy to make</em>
+    </ol>
+    <br>
+    <ol>
+        <h3>
+            summary
+        </h3>
+        <br>
+        <li>
+            <b>test suites</b>
+            <br>
+            <b>assertions</b>
+        </li>
+        <br>
+        <li>
+            throwing exception causes call stack to be 
+            <br>
+            unwound until next enclosing try/catch or untill 
+            <br>
+            bottom of stack
+            <br>
+        </li>
+        <br>
+        <li>
+            exception value will be given to the catch block 
+            <br>
+            verifies it is actually expected kind of exception
+            <br>
+            to do something with it
+        </li>
+        <br>
+        <li>
+            <b>Finally</b> blocks used to ensure piece of code 
+            <br>
+            always runs when block is finished
+        </li>
+    </ol>
     exercises
     retry
     the locked box
