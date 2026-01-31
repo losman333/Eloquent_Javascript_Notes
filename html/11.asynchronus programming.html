@@ -1,6 +1,6 @@
 
 <ol>
-    <li>asynchronicity</li>
+    <li><h3>asynchronicity</h3></li>
     <br>
     <ul>
         <img src="https://eloquentjavascript.net/img/control-io.svg" alt="">
@@ -10,9 +10,16 @@
         <br>
         <br>
         asynchronous model = multiple things happen at same time ( explicit)
+        <br>
+        <br>
+        <li>
+            <b>thread</b> = interleaved with other programs 
+            <br>
+            by the operating system
+        </li>
     </ul>
     <br>
-    <li>callbacks</li>
+    <li><h3>callbacks</h3></li>
     <p>common asynchrounous operation</p>
 
     
@@ -27,13 +34,88 @@
         <br>
         <li>asynchronicity is contagious</li>
     </ul>
-    <li>promises</li>
+    <li><h3>promises</h3></li>
     <ul>
-        <li>receipt representing a value</li>
+        <li>
+            receipt representing a value
+            <br>
+            that may not be available yet
+            <ul>
+                <li>when promise is resolved, value becomes available</li>
+            </ul>
+        </li>
         <br>
-        <li>Promise.resolve</li>
+        <li>easiest way to create a promise, Promise.resolve
+            <br>
+            <ul>
+                <li>ensures value you give is wrapped in a promise</li>
+                <br>
+                <li>if already a promise it is returned, otherwise
+                    you get a new promise that immediately resolves with your
+                    value as its result
+                </li>
+                <br>
+                <li>promise as a constructor
+                    <ul>
+                        <br>
+                        <li>
+                            constructor expects a function as its
+                            argument
+                        </li>
+                        <br>
+                        <li>immdietly calls function that it can use
+                            <br>
+                            to resolve promise
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <script>
+            function textFile(filename) {
+                return new Promise(resolve => {
+                    readTextFile(filename, text => resolve(text));
+                });
+            }
+
+            textFile("plans.txt").then(console.log);
+        </script>
+        <br>
+        <li>
+            <em>then</em> returns another promise
+            <p>possible to return "chain" multiple calls</p>
+        </li>
+        <script>
+            function randomFile(listFile) {
+                return textFile(listFile)
+                    .then(content => content.trim().split("\n"))
+                    .then(ls => ls[Math.floor(Math.random() * ls.length)])
+                    .then(filename => textFile(filename));
+            }
+        </script>
+
+        <li>
+            promise = device that lets code ignore question
+            <br>
+            of when a value is going to arrive
+        </li>
+        <li>
+            computations defined with promises by using then
+            <br>
+            calls are excuted asynchronously
+        </li>
     </ul>
     <li>failure</li>
+    <br>
+    <ul>
+        <li>
+            <b>
+
+            </b>
+        </li>
+
+    </ul>
     <li>carla</li>
     <li>breaking in</li>
     <li>async functions</li>
