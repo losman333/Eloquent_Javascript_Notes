@@ -106,13 +106,49 @@
             calls are excuted asynchronously
         </li>
     </ul>
-    <li>failure</li>
+    
+    <li><h3>failure</h3></li>
+    <p> catch handler handles rejection</p>
+    <p> returns a value which is given to second</p>
+    <p>then handler function</p>
     <br>
+    
     <ul>
         <li>
+            difficult to ensure failures are properly
+            <br>
+            reported to callback
+        </li>
+        <br>
+        <li>
             <b>
+                <p>pipeline which values of failures momve</p>
+                <br>
+                <p>chains created by registering handlers</p>
 
             </b>
+        </li>
+        <br>
+        <li>
+            resolving a promise provides a value,
+            <br>
+            rejecting a promise provides a value (reason for rejection)
+        </li>
+        <br>
+        <li>
+            <b>Promise.reject</b> = function creates a new,
+            <br>
+            <p>immediately rejected promise</p>
+        </li>
+        <li>
+            <b>then</b> accepts rejection handler as second 
+            <br>
+            arguement you can install both types of 
+            <br>
+            handlers in a single method call
+            <b>acceptHandler</b> = 
+            <br>
+            <b>rejectHandler</b>
         </li>
 
     </ul>
