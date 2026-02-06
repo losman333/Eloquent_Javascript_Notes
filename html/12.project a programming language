@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>
+            <h3>parsing</h3>
+            <p>parser = program that reads a piece of text
+                <br>
+                produces data structure reflects structure
+                <br>
+                of the program contained in text
+                <br>
+                parser points out error if text is not form
+                <br>
+                a valid program
+            </p>
+            <p>
+                <b>
+                    parserExpressions = takes string as input
+                </b>
+                <ul>
+                    <li>returns objectj contating data structure</li>
+                    <li>
+                        for expression at start of string
+                    </li>
+                    
+                    <li>
+                        parsing subexpressions arguemnt to an
+                        application for example
+                    </li>
+                    <li>
+                        function can be called again
+                    </li>
+                    <li>
+                        text may contain more arguments
+                        <br>
+                        may be the closing parenthesis that ends list of arguments
+                    </li>
+                    
+                </ul>
+            </p>
+        </li>
+       <p>
+         <b>value</b>
+        <p>sytax tree</p>
+        application expression cotain other expressions
+       </p>
+       <p>
+        skipSpace
+       </p>
+       <p>
+        parseExpressions
+       </p>
+        <li>
+            <h3>evaluator</h3>
+        </li>
+        <li>
+            <h3>special forms</h3>
+        </li>
+        <li>
+            <h3>functions</h3>
+        </li>
+        <li>
+            <h3>compliation</h3>
+        </li>
+        <li>
+            <h3>cheating</h3>
+        </li>
+        <li>
+            <h3>exercises</h3>
+            <ol>
+                <li>arrays</li>
+                <li>closure</li>
+                <li>comments</li>
+                <li>fixing scope</li>
+                
+            </ol>
+        </li>
+    </ol>
+</body>
+</html>

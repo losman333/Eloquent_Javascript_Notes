@@ -148,18 +148,139 @@
             handlers in a single method call
             <b>acceptHandler</b> = 
             <br>
-            <b>rejectHandler</b> f
+            <b>rejectHandler</b> 
             
         </li>
 
     </ul>
     <li>carla</li>
     <li>breaking in</li>
+    <br>
     <li>async functions</li>
+    <ul>
+        <br>
+        <li>
+            returns promise can await other promises that look synchronus
+        </li>
+        <li>async before function</li>
+    
+        <li>
+            if promise rejects exception is raised at point of await
+        </li>
+        <li>await can be placed in front of expression 
+            <br>
+            to wait for promise to resolve
+        </li>
+        <li>
+            async functions better that writing then calls
+        </li>
+    </ul>
+    <br>
     <li>generators</li>
+
+    
+    
+    <ul>
+        <li>defining function with * = becomes a generator</li>
+        
+        <li>calling a generator returns an iterator</li>
+        <br>
+        calling next on the iterator function
+        <br>
+        <li>runs until it hits a yield expression</li>
+        <br>
+        <li>pauses and causes the yielded value to become</li>
+        <br>
+        <li>when function returns the iterator is done</li>
+        <br>
+        <li>writing iterators is easier when using generator functions</li>
+
+        <li>async function = special type of generator</li>
+        <li>produces promise when called which is resolved when it returns
+            <br>
+            rejected when it throws an exception
+        </li>
+        <li>yield (awaits) a promise  result of promise (value or thrown) is the result of await expression  </li>
+       
+    </ul>
+    <br>
+
+
+
     <li>corvid art project</li>
+
+    using <em>request function</em>
+
+    <ul>
+        <li>
+            clipImages 
+        </li>
+
+        <li>
+            catch call
+        </li>
+
+        <li>promise has a static method all</li>
+
+        <li>maps over images in frame</li>
+
+        <li>
+            class has an asynchro play method returns promise
+            <br>
+            resolves only when playback is stopped again
+            <br>
+            vai the stop method
+        </li>
+
+        <li>wait function wraps setTimeout
+            <br>
+            resolves after given number of milliseconds
+            <br>
+            userful for controlling speed of playback
+        </li>
+
+    </ul>
     <li>event loop</li>
+
+    <ul>
+       
+            asynchronous behavoir happens on its won empty
+            <br>
+            empty function call stack
+            <br>
+            without promises managing exceptoins across asynchronous
+            <br>
+            code is hard
+            <br>
+    </ul>
+
+    <ul>
+        <li>callback starts with a mostly empty stack</li>
+        <br>
+        <li>catch handlers wont be on the stack when they throw</li>
+        <br>
+        <li>an exception</li>
+    </ul>
     <li>asynchronous bugs</li>
+    <ul>
+        <li>
+            return lines from mapped promises
+            <br>
+            calling join on result of Promise.all
+            <br>
+            instead of building up list by changing a binding
+
+        </li>
+        <li>
+            computing new values is less error prone than cahning existing values
+        </li>
+        <li>
+            mistakes when using await
+            <br>
+            be aware of gaps in your code
+            <br>
+        </li>
+    </ul>
     <li>summary</li>
     <li>exercises</li>
     <li>real promises</li>
