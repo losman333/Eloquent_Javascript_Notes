@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Platform Game</title>
+</head>
+<body>
+    <ol>
+        <li>
+            <h3>
+                The Game
+            </h3>
+        </li>
+        <li>
+            <h3>
+                The Technology
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Levels
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Reading a level
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Actors
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Drawing
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Motion and Collision
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Actor Updates
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Tracking Keys
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Running the Game
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Excercises
+            </h3>
+            <ol>
+                <li>
+                    <h4>
+                        Game Over
+                    </h4>
+                </li>
+                <li>
+                    <h4>
+                        Pausing the Game
+                    </h4>
+                </li>
+                <li>
+                    <h4>
+                        A monster
+                    </h4>
+                </li>
+            </ol>
+        </li>
+    </ol>
+    <code><pre>
+    const wobbleSpeed = 8, wobbleDist = 0.07;
+
+    Coin.prototype.update = function(time) {
+    let wobble = this.wobble + time * wobbleSpeed;
+    let wobblePos = Math.sin(wobble) * wobbleDist;
+    return new Coin(this.basePos.plus(new Vec(0, wobblePos)),
+                    this.basePos, wobble);
+    };
+    </pre></code>
+</body>
+</html>
