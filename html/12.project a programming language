@@ -55,18 +55,96 @@
        </p>
        <p>
         parseExpressions
+        <ul>
+            <li>strings</li>
+            <li>numbers</li>
+            <li>words</li>
+        </ul>
        </p>
         <li>
             <h3>evaluator</h3>
+            <ul>
+                <li>evalutes expression that syntax tree represents</li>
+                <li>evaluator has code for each of the expression types</li>
+                <li>recusive structure of evaluate resembles structure of parser</li>
+            </ul>
         </li>
         <li>
             <h3>special forms</h3>
+            <ul>
+                <li>
+                    object used to define special syntax in Egg
+                </li>
+                <li>
+                    eggs if construct expects exactly three argumenets
+                    <br>
+
+                </li>
+                <li>
+
+                </li>
+            </ul>
         </li>
+       
         <li>
+            <h3>The Environment</h3>
+        </li>
+        evaluate = object with properties whose names
+        correspond to binding names binding are bound to values
+        <ul>
+            <li>
+                bind two names to values true and false
+            </li>
+            <li>add function values to scope</li>
+            <li>
+                use function to synthesize bunch of operator
+                <br>
+                functions in a loop instead of individually
+            </li>
+            <li>console.log to ouput values</li>
+            <li>object prototype chains to represent nested
+                <br>
+                scopes so program can add bindings to its
+                <br>
+                local scope without changing top-level scope
+            </li>
+        </ul>
+         <li>
             <h3>functions</h3>
+            <ul>
+                <li>
+                    adding a fun construct
+                </li>
+                <li>
+                    treats last argument as functions body
+                    <br>
+                    uses all arguments before that as names
+                    <br>
+                    of function parameters
+                </li>
+                <li>
+                    function get their own local scope
+                    <br>
+                    produced by local scope adds argument binding
+                    <br>
+                    evalutes function body in scope returns result
+                </li>
+            </ul>
         </li>
         <li>
             <h3>compliation</h3>
+            <li>
+                <b>compliation</b> = process of adding another setp
+                <br>
+                between parsing and running of program
+                <li>
+                    transforms program into something that can
+                    <br>
+                    be evaluated by doing as much work as possible
+                    <br>
+                    in advance
+                </li>
+            </li>
         </li>
         <li>
             <h3>cheating</h3>
