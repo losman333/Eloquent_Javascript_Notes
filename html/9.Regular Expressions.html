@@ -1,21 +1,460 @@
-<ol>
-    <li>creating a regular expressions</li>
-    <li>testing for matches</li>
-    <li>set of characters</li>
-    <li>international characters</li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+    <li>
+        creating a regular expressions
+        <ul>
+            <li>
+                RegExp constructor vs // forward slash characters
+            </li>
+            RegExp = pattern written as normal string rules apply 
+            <br>
+            for backslashes
+            <li>// forward slashes = treats backslashes differently 
+                <br>
+                must use \ before / forward slash to be included in pattern
+                <br>
+                ex: /\?/ = "?"
+            </li>
+        </ul>
+    </li>
+    <li>testing for matches
+        <ul>
+            <li>
+                <b>regular expression</b> =  obejcts have a number
+                <br>
+                of methods
+                <ol>
+                    <li>test</li>
+                </ol>
+            </li>
+          
+        </ul>
+    </li>
+    <li>set of characters
+        <ul>
+            <li>
+                - hyphen between characters can be used 
+                <br>
+                to
+                 indicate a range of numbers where
+                 <br>
+                 order is determined by unicode number
+            </li>
+            <li>
+
+            </li>
+        </ul>
+    </li>
+    <li>international characters
+        <ul>
+            <li>
+                regular expressions are rather dumb about characters
+                <br>
+                that do not appear in the English language.
+            </li>
+            <li>
+                 \s (whitespace) does not have this problem 
+                 <br>
+                 and matches all characters that the Unicode 
+                 <br>
+                 standard considers whitespace,
+            </li>
+
+        </li>
+        <li>
+            It is possible to use \p in a regular expression to match
+            all characters to which the Unicode standard assigns a given
+            property.
+            <br>
+            (allows us to match things like letters in a more cosmopolitan way)
+            <li>
+                only when you put a u character (for Unicode) after the
+                regular expression.
+            </li>
+        </li>
+        <p>
+            <code>
+                <pre>
+
+\p{L}	Any letter
+\p{N}	Any numeric character
+\p{P}	Any punctuation character
+\P{L}	Any nonletter (uppercase P inverts)
+\p{Script=Hangul}	Any character from the given script (see Chapter 5)
+
+                </pre>
+            </code>
+        </p>
+    </ul>
     <li>repeating parts of a pattern</li>
+    <ul>
+        <li>
+            <b>+</b> plus sign in regular indicatese
+            <br>
+            the element may be repeated more than once
+        </li>
+        <li>
+            Thus, /\d+/ matches one or more digit characters.
+        </li>
+        <p>
+            <li>
+                <b>*</b> = match pattern zero times, never prevents a pattern
+                <br>
+                from matching—it’ll just match zero instances if it can’t
+                <br>
+                find any suitable text to match.
+            </li>
+        </p>
+        <p>
+            <li>
+                <b>?</b> = makes a part of a pattern optional,
+                <br>
+                meaning it may occur zero times or one time.
+            </li>
+        </p>
+        <li>
+            {} = pattern should occur a precise number of times, 
+            <br>
+            use braces. Putting {4} after an element, for example, 
+            <br>
+            requires it to occur exactly four times.
+        </li>
+        <p>
+            <li>
+                specify range = specify a range this way: {2,4} means the element
+                must occur at least twice and at most four times.
+            </li>
+                </ul>
+        </p>
     <li>grouping subexpressions</li>
+    <ul>
+        <li>
+            operators * and + use parenthesis, regular parentheses
+            <br>
+            counts as a single element /(1+2)/
+            <p>
+                <code>
+                    <pre>
+                    let cartoonCrying = /boo+(hoo+)+/i;
+                    console.log(cartoonCrying.test("Boohoooohoohooo"));
+                    // → true
+                    </pre>
+                </code>
+            </p>
+            i = makes at end makes regular expression case insensitive
+            <br>
+            allows to match upper case B
+        </li>
+    </ul>
     <li>matches and groups</li>
+    <ul>
+        <li>
+            <b>exec</b> method = will return null if no matches found
+            <br>
+            return object with information about the match otherwise
+            <br>
+            tells where in the string successful match begins
+        </li>
+        <li>
+            subexpressions grouped with parentheses
+        </li>
+            when group does not match
+
+            to use parentheses for grouping
+
+            groups useful for extracting parts of a string
+    </ul>
     <li>date class</li>
+
+        <ul>
+            <li>
+                Date class = represents dates create date object use new
+                <br>
+                create object for specific times
+            </li>
+            <li>
+                month numbers start at zero
+                <br>
+                last for arguments hours, minutes, seconds and milliseconds
+            </li>
+            <li>
+                Timestamps stored as milliseconds uses Unix time
+                getTime method returns unix time
+            </li>
+            date constructor = given a single argument arguement is
+            <br>
+            treated as a millisecond count
+            create new Date object use getTime Date.now for current
+            <br>
+            millisecond count
+            date objects methods
+            getFullYear, getMonth, getDate, getHours, getMinutes, and getSeconds
+        </ul>
+
     <li>boundries and look ahead</li>
+    <ul>
+        <li>
+            to enforce that the match must span the whole 
+            <br>
+            string, we can add the markers ^ and $.
+        </li>
+        <li>
+            Thus /^\d+$/ matches a string consisting entirely of one or more digits, /^!/ matches any string that starts with an exclamation mark, and /x^/
+        </li>
+        <li>
+            boundary markers don’t match any actual characters.
+            <br>
+            They just enforce that a given condition holds at the
+            <br>
+            place where it appears in the pattern.
+        </li>
+        <li>
+            Look-ahead tests do something similar. They provide a
+            <br>
+            pattern and will make the match fail if the input doesn’t
+            <br>
+            match that pattern, but don’t actually move the match position
+            <br>
+            forward. They are written between (?= and ).
+        </li>
+    </ul>
     <li>choice patterns</li>
-    <li>mechanics of matching</li>
-    <li>backtracking</li>
+
+    <ul>
+        <li>|| = denotes a choice between pattern to left and pattern to right</li>
+        <li>mechanics of matching</li>
+        <li>regular expression engine looks for a match in your string by </li>
+        <br>
+        <li>trying to match the expression first from the start of the string, </li>
+        <br>
+        <li>
+            then from the second character, and so on until it finds
+            a match or reaches the end of the string
+        </li>
+        <img src="https://eloquentjavascript.net/img/re_pigchickens.svg" alt="">
+    </ul>
+
+    <li>
+        <h3>backtracking</h3>
+        <ul>
+            <li>
+                matcher
+
+                matcher backtracks
+
+                backtrack happens for repetition operators
+                <br>
+                like + and * 
+
+                possible to write expressions that will
+
+                backtracks position  goes through outer loop once
+
+                backtracks out of inner loop  
+
+                match will take for ever
+            </li>
+        </ul>
+
+    </li>
     <li>replace method</li>
+
+    <ul>
+        <li>
+            strings have replace method
+            <br>
+            used to replace part of string with another string
+            <br>
+        </li>
+        <li>
+            when g option is added for global all matches in
+            <br>
+            string will be replaced not just first
+            <br>
+        </li>
+        <li>
+            first argument can also be regular expression
+            <br>
+            when g option for global is added after regular
+            <br>
+            expression all matches in string will be replaced
+            <br>
+        </li>
+        <li>replace can refer to matched groups in replacment string</li>
+        <li>
+            possible to pass  a function rather than string as
+            <br>
+            second argument to replace
+        </li>
+        <li>
+            function will be called with match groups as well
+            <br>
+            as the whole match
+        </li>
+        <li>return value will be inserted into the new string</li>
+        <li>
+            code takes a string
+            <br>
+            finds all occurrences of number 
+            <br>
+            followed by alphanumeric word
+        </li>
+        <li>returns a string has one less of every such quantity</li>
+        <li>
+            the (\d+) group ends up as the amount 
+            <br>
+            argument to the function
+            <br>
+            (\p{l}+) group gets bound to unit
+        </li>
+        <li>
+            function coverts amount to number makes adjustmen in case
+            <br>
+            ther is onlyl one or zero left
+        </li>
+    </ul>
+
+
     <li>greed</li>
+    <ul>
+        <li>
+            use replace to write function that removes
+            <br>
+            all comments from piece of JavaScript code
+        </li>
+
+        <li>
+            | before operator matches two slash characters
+            <br>
+            followed by any number of non-newline characters
+        </li>
+        <li>
+            ^ any character that is not in the empty
+            <br>
+            set of characters as way to match charcter
+        </li>
+        <li>
+            repetition operators (+, *, ? and {}) are greedy
+            <br>
+            match as much as they can and backtrack from there
+        </li>
+        <li>
+            adding ? after characters(+?, *?, ??, {}?) 
+            <br>
+            become non-greedy
+            <br>
+            start matching as little as possible
+            <br>
+            matching only when remaining pattern does not fit
+            <br>
+            bugs can occur to unintentionally using a greedy operator
+            <br>
+            where a nongreedy one would work better
+            <br>
+            when using repition operator, prefer non greedy varian
+            <br>
+        </li>
+    </ul>
     <li>dynamically creating regEXP objects</li>
+    <ul>
+        <li>
+            \s part of the string use two backslashes
+            <br>
+
+        </li>
+        <li>
+            add backslashes before any character
+            <br>
+            that has special meaning 
+        </li>
+    </ul>
+
     <li>search method</li>
+    <ul>
+        <li>
+            indexOf method cannot be called with regular
+            <br>
+            expression
+        </li>
+        <li>
+            search method = returns first index on which 
+            <br>
+            expression was found, or -1 when it wasn't found
+            <br>
+        </li>
+    </ul>
     <li>lastIndex property</li>
+        <ul>
+            <li>
+                RegEx expression objects have properties
+                <ul>
+                    <li>
+                        source = contains string expression was
+                        <br>
+                        created from
+                    </li>
+                    <li>
+                        lastIndex = controls where next match will start
+                        <br>
+                        regexp must have global(g)
+                        <br>
+                        sticky(y) 
+                        <br>
+                        match must happen through exec method
+                        <br>
+                    </li>
+                    <li>
+                        if match was successful call to exec
+                        <br>
+                        automatically updates the lastIndex property
+                        <br>
+                        to point after match
+                        <br>
+                        if no match lastIndex set to 0
+                    </li>
+                    <li>
+                        global vs sticky options
+                        <ul>
+                            <li>
+                                sticky = match will succeed if starts
+                                <br>
+                                directly at lastIndex
+                                <br>
+                            </li>
+                            <li>
+                               
+                                        global will search ahead for a 
+                                        <br>
+                                        position where match will start
+                              
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                reg express might be starting at an index
+                <br>
+                over from a previous call
+            </li>
+            <li>
+                match will find all matches of pattern in the 
+                <br>
+                string and return array containing matched strings
+            </li>
+            <li>
+                matchAll = method returns array of match arrays
+                <br>
+                regular expression given to matchAll must have g enabled
+            </li>
+        </ul>
     <li>parsing ini file</li>
     <li>code units and characters</li>
     <li>
@@ -69,6 +508,9 @@
                 characters that take up two code units
                 <br>
             </li>
-        </ol>
+        </ol>h
     </li>
 </ol> 
+</body>
+</html>
+
