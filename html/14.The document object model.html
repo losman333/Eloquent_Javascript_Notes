@@ -9,21 +9,147 @@
     <ol>
         <li>
             Document Structure
+            <ul>
+                <li>document = nested set of of boxes</li>
+                <li>
+                    Document Object model or DOM = object that represents
+                    <br>
+                    which boxes and text it contains
+                </li>
+                <li>
+                    documentElement = global binding Document
+                    <br>
+                    that gives acces to the objects
+                </li>
+                <li>
+                    head and body = properties that point
+                    <br>
+                    to html elments
+                </li>
+                <li>
+
+                </li>
+            </ul>
         </li>
         <li>
             Trees
+            <ul>
+                <li>
+                    nodeType = property contains 
+                    <br>
+                    code number that identifies type of node
+                </li>
+                <li>
+                    Node.ELEMENT_NODE = code 1 (Elements)
+                </li>
+                <li>Node.TEXT_NODE = code 3 (Text)</li>
+                <li>Node.COMMENT_NODE = code 8 (code 8)</li>
+                <br>
+                <img src="https://eloquentjavascript.net/img/html-tree.svg" alt="">
+                <li>
+                    leaves are text nodes, arrows indicate parent-child
+                    <br>
+                    relationships between nodes
+                </li>
+            </ul>
         </li>
         <li>
             Standard
         </li>
+        
         <li>
             Moving throught the tree
+            <ul>
+            <p>
+                <li>
+                    firstChild, lastChild = properties
+                    <br>
+                    point to first and last elements or
+                    <br>
+                    value null for nodes without children
+                    <br>
+                </li>
+            </p>
+            <p>
+                <li>
+                    previousSibling, next Sibling = point
+                    <br>
+                    to adjacent nodes
+                    <br>
+                    first child previousSibling will be null
+                    <br>
+                    for last child nextSibling will be null
+                </li>
+            </p>
+
+        </ul>
         </li>
         <li>
             Finding Elements
+            <ul>
+                <li>
+                    following a fixed path of properties
+                    <br>
+                    is a bad idea = bakes assumptions into
+                    <br>
+                    program about the precise structure 
+                    <br>
+                    you want to change later
+                
+                </li>
+                <li>
+                    text nodes are created even
+                    <br>
+                    for whitespace between nodes
+                </li>
+                <li>
+                    getElementsByTagName method = collects all
+                    <br>
+                    elements with given tag name 
+                    <br>
+                    (direct or indirect children)
+                </li>
+                <li>
+                    getElementById =
+                </li>
+                <li>
+                    document.getElmentById = to find
+                    <br>
+                    specific node give an id attribute
+                </li>
+                <li>
+                    getElementsByClassName = searches through
+                    <br>
+                    the contents of element node and retrieves
+                    <br>
+                    all elements that have given string in their
+                    <br>
+                    class attribute
+                </li>
+            </ul>
         </li>
         <li>
             Changing The Document
+            <ul>
+                <li>
+                    remove = method to remove them
+                    <br>
+                    from the current parent node
+                </li>
+                <li>
+                    appendChild = puts child node at end
+                    <br>
+                    of the list of children
+                </li>
+                <li>
+                    insertBefore = inserts node given as first
+                    <br>
+                    argument before node given as second argument
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
         </li>
         <li>
             Creating Nodes
@@ -49,6 +175,22 @@
         <li>
             Summary
         </li>
+        <li>
+            excercises
+            <ol>
+                <li>
+                    build a table
+                </li>
+                <li>
+                    Elements by tag name
+                </li>
+                <li>
+                    The Cats hat
+                </li>
+
+            </ol>
+        </li>
+
     </ol>
 </body>
 </html>

@@ -456,7 +456,110 @@
             </li>
         </ul>
     <li>parsing ini file</li>
+    <ul>
+        <li>
+            rules for INI file
+        </li>
+        <li>Blank lines and lines starting with semicolons are ignored.</li>
+
+        <li>Lines wrapped in [ and ] start a new section.</li>
+
+        <li>
+            Lines containing an alphanumeric identifier followed by 
+            <br>
+            an = character add a setting to the current section.
+        </li>
+
+        <li>Anything else is invalid.</li>
+        <li>split method allows regular expression as 
+            <br>
+            its argument
+        </li>
+        <li>
+            process format into seperate lines
+            <br>
+        </li>
+        
+        <li>
+            split method allows regular expression as 
+            ex: to hold both "\n" and \r
+            <li>
+                allows both \n and \r\n 
+                <br>
+                between lines
+            </li>
+            <li>
+                properties at top stored in object
+            </li>
+            <li>
+                properties found in sections are 
+                <br>
+                stored in seperate section object
+                <br>
+                section binding points at object for current
+                <br>
+                section
+            </li>
+            <li>
+                section headers
+            </li>
+            <li>
+                property lines
+            </li>
+            <li>^ and $ to make sure expression 
+                <br>
+                matches whole line
+            </li>
+            <li>
+                pattern if (match = string.match(...))
+                <br>
+                value of assignment is asssigned value
+            </li>
+            <li>
+                asssing result of match to binding 
+                <br>
+                immediately use assignment ast test 
+                <br>
+                for if statement
+                <br>
+                assing result of match to binding and 
+                <br>
+                immediately use that assignment as test 
+                <br>
+                for if statment
+            </li>
+            <li>
+                if line not section or property
+                <br>
+                function checks whether it is a 
+                <br>
+                comment or empty line using expression
+                <br>
+                /^\s*(;|$)/
+            </li>
+            <li>
+                if no match function throws exception
+            </li>
+            <br>
+            argument use regular expression as its argument
+            <br>
+            if                                                                                                                                                                                                                                                                                                                                                                                                     
+        </li>
+    </ul>
     <li>code units and characters</li>
+    <ul>
+        <li>
+            characters composed of two code units
+            <br>
+            behave strangely
+        </li>
+        <li>
+            add letter u (Unicode to regular expressions)
+            <br>
+            to make it treat such characters properly
+        </li>
+    </ul>
+    
     <li>
         <ol>
             <h3>summary</h3>
