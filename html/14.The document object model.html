@@ -153,24 +153,134 @@
         </li>
         <li>
             Creating Nodes
+            <ul>
+                <li>createTextNode = insert text node into document</li>
+                <li>
+                    node list returned by getElementsByTagName or
+                    <br>
+                    property nodes is <em>live</em> = updated as
+                    <br>
+                    document changes. 
+                </li>
+                <li>
+                    convert solid collection of nodes as opposed
+                    <br>
+                    to live ones = use Array.from
+                </li>
+            </ul>
+
         </li>
         <li>
             Attributes
+            <ul>
+                <li>
+                    getAttribute = gets attributes from nodes
+                </li>
+                <li>
+                    setAttribute = adds attributes to nodes
+                </li>
+
+            </ul>
         </li>
         <li>
             Layout
+            <ul>
+                <li>offsetWidth = </li>
+                <li>
+                    offsetHeight = 
+                </li>
+                <li>
+                    clientWidth, clientHeight = takes give you
+                    <br>
+                    size of space inside element ignoring
+                    <br>
+                    border width
+                </li>
+
+                <li>
+                    getBoundingClientRect = method returns object
+                    <br>
+                    with top bottom, left and right properties
+                    <br>( indicates pixel positions of sides of elements
+                    <br>
+                    releative to upper left of screeen
+                    )
+                </li>
+                <li>
+                    pageXOffset and pageYOffset = pixel position
+                    <br>
+                    relative to whole document ( must add 
+                    <br>
+                    current scroll position
+                    )
+                </li>
+            </ul>
         </li>
         <li>
             Styling
+            <ul>
+                <li>
+                    style property = holds object that
+                    <br>
+                    has properties for style properties
+                    <br>
+                    values of properties are strings which
+                    <br>
+                    change aspect of elements style
+
+                </li>
+            </ul>
         </li>
         <li>
             Cascading Styles
+            <ul>
+                <li>
+                    cascading style sheet = set of rules
+                    <br>
+                    for how to style elements in a document
+                    <br>
+                    given inside a style tag = order of
+                    <br>
+                    presedence = specificity ( measure of how
+                    <br>
+                    perciselly it describes matching elements
+                    <br>
+                    determined by number and kind (tag, class, ID)
+                    )
+                </li>
+            </ul>
         </li>
         <li>
             Query Selectors
+            <ul>
+                <li>
+                    querySelectorAll = method defined both
+                    <br>
+                    on document object and element nodes
+                    <br>
+                    takes a string returns NodeList
+                    <br>
+                    containing all elements it matches
+                </li>
+            </ul>
         </li>
         <li>
             Positioning and Animating
+            <ul>
+                <li>
+                    position property = static, relative
+                    <br>
+                    absoulte
+                </li>
+
+                <li>
+                    requestAnimationFrame = schedule the animate
+                    <br>
+                    function to run whenever browser is ready to repaint screen
+                    <br>
+
+                </li>
+            </ul>
         </li>
         <li>
             Summary

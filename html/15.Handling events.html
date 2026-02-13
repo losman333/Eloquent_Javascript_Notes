@@ -9,42 +9,153 @@
 <body>
     <ol>
         <li>
-            <h3>Event</h3>
+            <h3>Event Handlers</h3>
+            keypress
+
+            polling
+
+            handlers
+
         </li>
         <li>
             <h3>Events and dom Nodes</h3>
+            <ul>
+                <li>
+                    addEventListner
+                </li>
+                <li>
+                    onclick
+                </li>
+                <li>
+                    removeEventListner
+                </li>
+                <li>
+                    addEventListner
+                </li>
+                <li>
+
+                </li>
+            </ul>
         </li>
         <li>
-            <h3>Event</h3>
+            <h3>Event Objects</h3>
+            <ul>
+                <li>event object = holds additional 
+                    information about event (which mouse button was pressed)
+                </li>
+                <li>
+                    click or mousedown
+                </li>
+            </ul>
         </li>
         <li>
             <h3>Event Objects</h3>
         </li>
         <li>
             <h3>Event Propagation</h3>
+            <ul>
+                <li>
+                    propogate = order of event handlers
+                </li>
+                <li>
+                    stopPropagation = preventsn handlers 
+                    <br>
+                    further up the receiving event (prevent 
+                    <br>
+                    handler on paragraph from running)
+                </li>
+                <li>
+                    target property = refers to node where 
+                    <br>
+                    they orginated
+                </li>
+            </ul>
         </li>
         <li>
             <h3>Default Actions</h3>
+            <ul>
+                <li>
+                    many events have default Actions
+                </li>
+                <br>
+                <li>JavaScript event hanlders are</li>
+                <br>
+                <li>called before event takes place</li>
+                <br>
+                <li>prevent default = used to implement</li>
+                <br>
+                own keyboard shortcuts on context menu
+            </ul>
         </li>
         <li>
             <h3>
                 Key Events
             </h3>
+            <ul>
+                <li>
+                    keydown vs keyup
+                </li>
+                <li>
+                    keydown fire only when key is
+                    <br>
+                    physically pushed down
+                </li>
+                element that has focus when key is pressed
+                <li>
+                    tableindex attribute 
+                </li>
+                <li>
+                    input method editor
+                </li>
+            </ul>
         </li>
         <li>
             <h3>
                 Pointer Events
             </h3>
+            <ul>
+                <li>
+                    
+                </li>
+            </ul>
                 <ol>
                     <li>
                         <h4>
                             mouse clicks
                         </h4>
+                        <ul>
+                            <li>
+                                mousedown
+                            </li>
+                            <li>
+                                mouseup
+                            </li>
+                            <li>
+                                click
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <h4>
                             mouse motion
-                        </h4>
+                         </h4>
+                            <ul>
+                                <li>
+                                    mousemove = registerd on the whole window
+                                </li>
+                                <li>
+                                    buttons property = tells buttons currently
+                                    <br>
+                                    held down. 
+                                </li>
+                                <li>
+                                    when 0 no buttons are down
+                                </li>
+                                <li>
+                                    
+                                </li>
+                            </ul>
+                       
                     </li>
                     
                 </ol>
@@ -54,30 +165,168 @@
             <h3>
                 Touch Events
             </h3>
+            <ul>
+                <li>
+                    when finger starts touching screen
+                    <br>
+                    touchstart
+                </li>
+                <li>touchmove</li>
+                <li>touched</li>
+                <li>touches property = clientX, clienty, pageX, pageY</li>
+            </ul>
         </li>
         <li>
             <h3>
                 Scroll Events
             </h3>
+
+            <ul>
+                <li>use % rather than px as unit when setting widht`</li>
+                <li>combine with innerHeight</li>
+                <li>
+                    innerWidth
+                </li>
+                <li>
+                    dividing pageYOffset by maximum scroll position
+                    <br>
+                    multiplying by 100 = percentage of progresss bar
+                </li>
+            </ul>
         </li>
         <li>
             <h3>
                 Focus Events
             </h3>
+            <ul>
+                <li>
+                    focus
+                </li>
+                <li>
+                    blur
+                </li>
+                <li>
+
+                </li>
+            </ul>
         </li>
         <li>
             <h3>
                 Load Events
             </h3>
+            <ul>
+                <li>
+                    page finishes loading fires load event
+                </li>
+                <li>
+                    beforeunload = prevents user from 
+                    <br>
+                    losing work 
+                </li>
+                <li>
+                    prevent default behavior
+                    <br>
+                    and set return value to string
+                    <br>
+                    show user a dialog asking to confirm
+                    <br>
+                    leaving a page
+                </li>
+                <li>
+                    preventDefault on scroll event
+                    <br>
+                    does not prevent scrolling from happening
+                    <br>
+                    event handler is called only after scrolling
+                    takes place
+                </li>
+            </ul>
         </li>
         <li>
-            <h3>Load Event </h3>
+            <h3>Focus Events</h3>
+            <ul>
+                <li>
+                    focus = 
+                </li>
+                <li>
+                    blur
+                </li>
+                <li>
+                    two events do not propogate
+                </li>
+                <li>
+                    handler on a parent element is
+                    <br>        
+                    not notified when child element
+                    <br>
+                    gains or loses focus
+                </li>
+            </ul>
         </li>
         <li>
             <h3>Events and The Event loop </h3>
+            <ul>
+                <li>
+                    web workers = process runs alongside
+                    <br>
+                    main script on own timeline
+                </li>
+                <li>
+                    communicates by sending messages back and forth
+                </li>
+                <li>
+                    postMessage = fucntion sends message fires <em>message</em>
+                    <br>
+                    event in the browser
+                </li>
+                <li>
+                    <p>
+                        worker object vs worker
+                        <br>
+                        script that created worker sends and
+                        <br>
+                        receieves messages through Worker object
+                        <br>
+                        worker talks to script by sending and listening
+                        <br>
+                        directly on its global scope
+                    </p>
+                    <li>
+                        values represented as JSON can be sent as 
+                        <br>
+                        messages
+                    </li>
+                </li>
+            </ul>
         </li>
         <li>
             <h3>Timers </h3>
+            <ul>
+                <li>
+                    schedules function to be called later
+                    <br>
+                    after given number of millliseconds
+                </li>
+                <li>
+                    setTimout
+                </li>
+                <li>
+                    clearTimeout
+                </li>
+                <li>
+                    cancelAnimationFrame
+                </li>
+                <li>
+                    clearTimeout
+                </li>
+                <li>
+                    setInterval
+                </li>
+                <li>
+                    clearInterval
+                </li>
+                
+            </ul>
         </li>
         <li>
             <h3>Debouncing </h3>
