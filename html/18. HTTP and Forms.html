@@ -11,16 +11,131 @@
             <h3>
                 The protocol
             </h3>
+            <ul>
+                <li>
+                    browser looks up address of server
+                    <br>
+                    associated with website opens TCP
+                    <br>
+                    connection to port 80 (default web port for HTTP traffic)
+
+                </li>
+                <li>
+                    browser sends
+                    <br>
+                    GET /18_http.html HTTP/1.1
+                    <br>
+                    HOST: eloequent.net
+                    <br>
+                    User-Agent: your browser name
+                </li>
+                <li>
+                    information sent by client is <em>request</em>
+                </li>
+                <li>
+                    first word is method of the request GET (GET, DELETE, PUT)
+                </li>
+                <li>
+                   resource path
+                </li>
+                <li>
+                    HTTP/1.1 = version of HTTP protocol
+                </li>
+                <li>
+                    HTTP version 2 = loads faster
+                </li>
+                <li>
+                    status code with 2 = request succeded 
+                </li>
+                <li>
+                    HTTP Status code (ex 404, 5)
+                </li>
+                <li>
+                    headers 
+                </li>
+                <li>
+                    client server are free to decide
+                    <br>
+                    which headers to include (ex Content-Type)
+                </li>
+                <li>
+                    GET and DELETE dont send along any data
+                    <br>
+                    PUT and POST request do
+                </li>
+
+            </ul>
         </li>
         <li>
             <h3>
                 Browser and http
             </h3>
+            
+            <ul>
+                <li>
+                    browser will make request
+                    <br>
+                    when url is entered
+                </li>
+               <li>
+                html can include forms
+               </li>
+               <li>
+                submit button = content packed into
+                <br>
+                an HTTP request and browser navigates
+                <br>
+                to the result of that request
+               </li>
+               <li>
+                GET used for request without side
+                <br>
+                effects but ask for information
+               </li>
+               <li>
+                POST for request that change something
+               </li>
+            </ul>
         </li>
         <li>
             <h3>
                 fetch
             </h3>
+            <ul>
+                <li>
+                    fetch = returns pomise that
+                    <br>
+                    resolves to a Response object
+                    <br>
+                    holding information about servers response
+                    <br>
+                    such as a statuts code and headers
+                </li>
+                <li>
+                    fetch uses argument of URL that
+                    <br>
+                    should be requested
+                </li>
+                <li>
+                    <ul>
+                        first argument URL 
+                        <br>
+                        / replaces current path
+                    </ul>
+                </li>
+                <li>
+                    text method
+                </li>
+                <li>
+                    405 = method not allowed
+                </li>
+                <li>
+                    PUT or POST request  include body option
+                </li>
+            </ul>
+        </li>
+        <li>
+            HTTP Sanboxing
         </li>
         <li>
             <h3>
