@@ -132,55 +132,276 @@
                 <li>
                     PUT or POST request  include body option
                 </li>
+                <li>
+                    range header return only part of document
+                    <br>
+                    <b>fetch("excaple/data.txt", {headers: {Range: "bytes=8-19"}})</b>
+                </li>
             </ul>
         </li>
         <li>
-            HTTP Sanboxing
+            <h3>HTTP Sanboxing</h3>
+            <ul>
+                Access-Control-Allow-Origin = header to indicate browser
+                <br>
+                for request from aonther domain
+            </ul>
         </li>
         <li>
             <h3>
                 Appreciating HTTP
             </h3>
+            <ul>
+                <li>two ways to build system communication</li>
+                <li>
+                    remote procedure calls calling
+                    <br>
+                    function that runs on another machine
+                    <br>
+                    respones contains the returned value
+                </li>
+                  <li>
+                build comunication around concept
+                <br>
+                of resources and
+                addUser
+            </li>
+            <li>
+                Define JSON document format
+                <br>
+                that represents a user
+            </li>
+            </ul>
+          
         </li>
         <li>
             <h3>
                 Security and Https
             </h3>
+            <ul>
+                <li>
+                    secure HTTP protocol = client verfies server
+                    <br>
+                    asks to prove cryptographic certificate
+                    <br>
+                    issued by certificate authority
+                    <br>
+                    all data is encrytped
+                </li>
+               
+            </ul>
         </li>
         <li>
             <h3>
                 Form Fields
             </h3>
+             
+                 <ul>
+                    <li>field types</li>
+                    <li>
+                        input fields
+                    </li>
+                    <li>
+                        filed types use the input <input> tag
+                    </li>
+                    <li>
+                        multiline text fields textarea <> text area
+                    </li>
+                    <li>
+                        select tag = used to create a field 
+                        <br>
+                        allows user to select from options
+                    </li>
+                        
+                </ul>
         </li>
         <li>
             <h3>
                 Focus
             </h3>
+            <ul>
+                <li>
+                    keyboard focus
+                </li>
+                <li>
+                    focus
+                </li>
+                <li>
+                    blur
+                </li>
+                <li>
+                    document.querySelector("input").focus()
+                    document.activeElement
+                </li>
+                <li>
+                    autofocus = lets browser known to 
+                    <br>
+                    disable behavior for something else
+                </li>
+                <li>
+                    tabindex = changes order of focus element 
+                    <br>
+                    (ex. jump from text input to ok button)
+                    <br>
+                    <li>
+                        tabindex of 0 makes element focusable without
+                        <br>
+                        affectin focus order
+                    </li>
+                </li>
+            </ul>
         </li>
         <li>
             <h3>
                 The Form as a whole
             </h3>
+            <ul>
+                <li>
+                    form element = uses DOM element has elements
+                </li>
+                <li>
+                    for element property acts both as array-like
+                    <br>
+                    object (accessible by number) and map (accessible by name)
+                </li>
+                <li>
+                    forms action attribute = GET or POST request
+                    <br>
+                    <b>event.preventDefault();</b>
+                </li>
+            </ul>
         </li>
         <li>
             <h3>
                 Text Fields
             </h3>
+
+            <ul>
+                <li>
+                    selectionStart
+                </li>
+                <li>
+                    selectionEnd
+                </li>
+                <li>
+                    gives information about curosr(position)
+                    <br>
+                    0 = start of text 10 cursor after 10th character
+                </li>
+            </ul>
+        
         </li>
         <li>
             <h3>
                 Checkboxes and radio buttons
             </h3>
+            <ul>
+                <li>
+                    checkbox field = binary toggle (values can be 
+                    <br>
+                    extracted or changed)
+                </li>
+                <li>
+                    radio button = similar to check box
+                    (only one can be active at a time)
+                </li>
+                <li>
+                    querySelectorAll = used to match attributes
+                </li>
+            </ul>
         </li>
         <li>
             <h3>
                 Select Fields
             </h3>
+            <ul>
+                <li>select fields similar to radio buttons</li>
+                <li>
+                    browser detremines appearance
+                </li>
+                <li>
+                    option tag has a value that can be defined
+                    <br>
+                    with a value attribute
+                </li>
+                <li>
+                    options can be accessed as an 
+                    <br>
+                    array-like object each option has a property
+                    <br>
+                    called selected indicates option is currently
+                    <br>
+                    selected property can also be written to select
+                    <br>
+                    or deselect an option
+                </li>
+            </ul>
         </li>
         <li>
             <h3>
                 File Fields
             </h3>
+            <ul>
+                <li>
+                    file fields looks like a button
+                    <br>
+                    labeled with something like "choose file"
+                    <br>
+                    uses input type=file
+                </li>
+                <li>
+                    objects in files have properties as name
+                    <br>
+                    (filename)
+                    <br>
+                    (size)
+                    <br>
+                    (type)
+                </li>
+                <li>
+                    to get content of file
+                </li>
+                <li>
+                    reading a file = created using FileReader
+                    <br>
+                    <b>let reader = new FileReader();</b>
+                </li>
+                <li>
+                    load event handler call as readAsText
+                    <br>
+                    <b>reader.addEventListner()</b>
+                </li>
+                <li>
+                    result propert contains file files content
+                    <br>
+                    console.log("File", file.name, "starts with", reader.result.slice(0, 20)
+                    <br>
+
+                    )
+                </li>
+                <li>
+                    FileReader also fires an error event
+                    <br>
+                    when reading file fails 
+                     <br>
+                     error obejct will end up in readers error property
+                     <br>
+                     <code>
+                        <pre>
+    function readFileText(file) {
+  return new Promise((resolve, reject) => {
+    let reader = new FileReader();
+    reader.addEventListener(
+      "load", () => resolve(reader.result));
+    reader.addEventListener(
+      "error", () => reject(reader.error));
+    reader.readAsText(file);
+  });
+}
+                        </pre>
+                     </code>
+                </li>
+            </ul>
         </li>
         <li>
             <h3>
