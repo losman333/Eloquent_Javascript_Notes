@@ -15,18 +15,112 @@
         </li>
         <li>
             HTTP interface
-        </li>
-        <li>
-            The Server
             <ul>
                 <li>
-                    routing
+                    using HTTP methods and headers
+                    <br>
+                    centered around /talks path
+                    <br>
+                    paths that do not start with /talks
+                    <br>
+                    used for serving static files
+                </li>
+                <br>
+                <b>get request to /talks returning JSON</b>
+                <code>
+                    <pre>
+[{"title": "Unituning",
+"presenter": "Jamal",
+"summary": "Modifying your cycle for extra style",
+"comments": []}]
+                    </pre>
+                </code>
+                <br>
+                <b>
+                    request for idling
+                </b>
+                <code>
+                    <pre>
+PUT /talks/How%20to%20Idle HTTP/1.1
+Content-Type: application/json
+Content-Length: 92
+
+{"presenter": "Maureen",
+ "summary": "Standing still on a unicycle"}
+                    </pre>
+                </code>
+                <li>
+                    also support GET requests to retrieve JSON
+                    <br>
+                    representation
                 </li>
                 <li>
-                    serving files
+                    to support long polling get requests
+                    <br>
+                    may include extra headers that inform server
+                    <br>
+                    to delay response if no new information is available
                 </li>
                 <li>
-                    talks as resources
+                    ETag (entity tag) identifies current version of resource
+                    <br>
+                    If-None-Match value holds same string
+                    <br>
+                    if no change 304 displays not modified.
+                    <br>
+                    (cached version still current)
+                </li>
+                <li>
+                    servers keeps version number that updates
+                    <br>
+                    when talks change and use that as ETag value
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h4>The Server</h4>
+            code runs on Node.js
+
+            <ul>
+                <h5>Routing</h5>
+                <li>
+                    use createServer to start HTTP server
+                    <br>
+                    router = component that helps dispatch request
+                    <br>
+                    to function that handles it
+                    <br>
+                    matches regular expressions
+                    <br>
+                    extracts meaningful parts of path
+                </li>
+                <li>
+                    router.mjs
+                </li>
+                
+               
+                <li>
+                    module exports Router class
+                    <br>
+                    registers handlers for specific methods
+                    <br>
+                    and URL patterns with this add method
+                    <br>
+                    request is resolved with resovle method
+                    <br>
+                    router calls handler method and URL match request 
+                    <br>
+                    and return its result
+                </li>
+                <li>
+                    context value given to resolve
+                    <br>
+                    used to give access to server state
+                </li>
+                <h4>serving files</h4>
+
+                <h4>talks as resources</h4>
+                <li>
                 </li>
                 <li>
                     Long polling support
