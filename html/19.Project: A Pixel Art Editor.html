@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Editor</title>
+</head>
+<body>
+    <ol>
+      
+        <li>
+            Components
+            <ul>
+                <li>
+                    editor structured as number of
+                    <br>
+                    components may contain other components
+                    <br>
+                    inside of them
+                </li>
+                <li>
+                    strict data flow 
+                </li>
+                <li>
+                    state of interface is based on that state
+                    <br>
+                    components get chance to sync themselves
+                    <br>
+                    with new state
+                </li>
+                <li>
+                    updates to state represented as objects
+                    <br>
+                    called actions
+                </li>
+                <li>components create such actions and dispatch them</li>
+                <li>
+                    state changes go through a single well-defined channel not happen all over the place
+                    <br>
+                </li>
+                <li>
+                    state changes should go through a single well-defined channel
+                    <br>
+                    not happen all over the place
+                </li>
+                <li>
+                    components will be classes conforming to an interface
+                    <br>
+                    constructor is a given state
+                    <br>
+                    uses that to build a dom property
+                    <br>
+                    DOM element represents component
+                </li>
+                <li>
+                    syncState method used to sync to 
+                    <br>
+                    a new state value
+                    <br>
+                    method takes one argument, the stsate
+                    <br>
+                    same type as first argument to its
+                    <br>
+                    constructor
+                </li>
+            </ul>
+        </li>
+        <li>
+            The State
+            <ul>
+                <li>
+                    application state will be object
+                    <br>
+                    with picture, tool, and color properties
+                    <br>
+                    pixels stored in a single array, row by row
+                    <br>
+                    from top to bottom
+                </li>
+                <li>
+                    draw method expects an array of
+                    <br>
+                    updated pixels-objects with x, y 
+                    <br>
+                    and color properties
+                    <br>
+                    creates a new picture with pixels overwritten
+                    <br>
+                    method uses slice witout arguments to copy pixel array
+                    <br>
+                    start of slice defaults to 0 end defaults to array length
+                </li>
+                <li>
+                    array constructor called with a number to create an empty
+                    <br>
+                    array of given lenght
+                    <br>
+                    fill method can be used to fill this 
+                    <br>
+                    array with given valu3
+                </li>
+                <li>
+                    empty methods uses two pieces of array 
+                    <br>
+                    functionality
+                    <ul>
+                        <li>
+                            array constructor can be called 
+                            <br>
+                            with a number to create an empty
+                            <br>
+                            array of given length
+                            <br>
+                            fill method can be used to fill this array
+                            <br>
+                            with a given valu3
+                        </li>
+                        <li>
+                            interface dispatch action as objects
+                            <br>
+                            whose propertis overwrite properties of
+                            <br>
+                            previous state
+                        </li>
+                    </ul>
+                    <code>
+                        <pre>
+                            function updateState(state, action) {
+                                return {...state,}
+                            }
+                        </pre>
+                    </code>
+                </li>
+            </ul>
+            
+        </li>
+        <li>
+            <h3>DOM Building</h3>
+            <ul>
+                <li>
+                    interface components create DOM structure
+                    <br>
+
+                </li>
+                <li>
+
+                </li>
+            </ul>
+        </li>
+
+        
+        <li>
+            <h3>The Canvas</h3>
+            <ul>
+                <li>
+                    component responsible
+                    <br>
+                    for two things
+                    <br>
+                    showing picture and communictation pointer
+                    <br>
+                    events on that picture to rest of application
+                </li>
+                <li>
+                    defined as component that only knows about current picture
+                    <br>
+                    not whole application state
+                </li>
+                <li>
+                    callback function provided by code
+                    <br>
+                    that created it will handle application-specific parts
+                </li>
+                <li>
+                    draw pixels as 10 by 10 square
+                    <br>
+                    determined by scale constant
+                </li>
+                <li>
+                    component keeps track of current picture
+                    <br>
+                    does redraw only when synchState is given new picture
+                </li>
+                <li>
+                    drawing function sets sise of canvas
+                    <br>
+                    based on scale and picture size
+                    <br>
+                    fills it with a series of squares, one for each pixel
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <h3>The Application</h3>
+            <ul>
+                <li>
+                    possible to build application piece by piece
+                </li>
+                <li>
+                    implement main component as shell around
+                    <br>
+                    picture canvas and dynamic set of tools
+                    <br>
+                    passed to constructor
+                </li>
+                <h4>Pixel Editor (class Pixel Editor)</h4>
+                <li>
+                    controls are interface elements that appear below picture
+                    <br>
+                    provided as an array of component constructors
+                </li>
+                <h4> ToolSelect( tool selection menu )</h4>
+                <li>
+                    set of tools provided is an object
+                    <br>
+                    that maps names that appear on <b>
+                        drop-down
+                        <br>
+                        field to functions
+                    </b> that implement the tools
+                    <br>
+                </li>
+                <li>
+                    <ul>
+                        <h4>functions gets</h4>
+                        <li>picture position</li>
+                        <br>
+                        <li>current application state and a dispatch    function as argument</li>
+                        <br>
+                     
+                    </ul>
+                    <li>
+                        may return a move handler function
+                        <br>
+                        that gets called  with a new position
+                        <br>
+                        and current state when pointer moves
+                        <br>
+                        to different pixels
+                    </li>
+                </li>
+                <li>
+                    function that implment tools
+                </li>
+                <li>
+                    returns move handler function picture position,
+                    <br>
+                    current application state
+                    <br>
+                    ( when pointer moves to a differnt pixel)
+                </li>
+                <li>
+                    pointer handler calls currently selected tool 
+                    <br>
+                    with the appropiate arguments. 
+                    <br>
+                    returns a move handler adapts it to also receive state
+                </li>
+                <li>
+                    this.controls can be updated when application
+                    <br>
+                    state changes. <b>reduce</b> introduces spaces between contrls
+                </li>
+                <li>
+                    selection menu is first control
+                    <ul>
+                        <li>select html element with option for each tool
+                            <br>
+                            sets up a change
+                        </li>
+                        <li>
+                            event handler updates application state
+                            <br>
+                            when different tool is selected
+                        </li>
+                        <li>
+                            Controls are a series of class objects
+                            <br>
+                            with constructors and that are return a syncState
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Drawing Tools</h3>
+            <ul>
+                <h4> Draw Function</h4>
+                <li>
+                   calls drawPixel returns drawPixel
+                </li>
+                <h4>
+                    function rectangle(start, state, dispatch)
+                </h4>
+                <li>
+                    draws rectangle between where you start dragging
+                    <br>
+                    and the <em>point you drag to</em>
+                </li>
+                <li>drawn from original stae
+                    <br>
+                    allows you to make rectangle larger and smaller 
+                    <br>
+                    without intermediate rectangles sticking around 
+                    <br>
+                    in the final picture
+                </li>
+                <h4>
+                    function fill
+                </h4>
+                <h4>
+                    function pick = allows you to point at a color
+                    <br>
+                    in the picture to use it as the current drawing color
+                </h4>
+            </ul>
+            
+        </li>
+        <li>
+            <h3>Saving and Loading</h3>
+            <h4>
+                class SaveButton
+            </h4>
+            <ul>
+                <li>
+                    button for downloading current picture
+                    <br>
+                    as an image file
+                </li>
+                <li>
+                    component keeps track of current picture
+                    <br>
+                    will access when saving
+                </li>
+                <li>
+                    toDataUrl = method creates URL 
+                    <br>
+                    uses: scheme
+                </li>
+                <li>
+                    link element point at the URL and has
+                    <br>
+                    a download attribute
+                </li>
+                <li>
+                    clicked links makes browser show saved 
+                    <br>
+                    dialog. Adds to document, simulates click,
+                    <br>
+                    then removes it
+                </li>
+                                                                                                                               
+            </ul>
+            <h4>
+                class LoadButton
+            </h4>
+            <ul>
+                <li>
+                    loads existing image filse into
+                    <br>
+                    application, 
+                </li>
+            </ul>
+
+            <b>function startLoad(dispatch)</b>
+            <ul>
+                <li>gets access to file on users
+                    <br>
+                    computer
+                    <br>
+                </li>
+                    <li>
+                        creates a file input when button
+                        <br>
+                        is clicked and pretend this file input
+                        <br>
+                        was clicked
+                    </li>
+               
+            </ul>
+            <h4>
+                function finishLoad(file, dispatch)
+            </h4>
+            <ul>
+                <li>
+                    FileReader gets access to contents
+                    <br>
+                    as data URL. URL can be used to create an <img>
+                    <br>
+                    element can get direct access to pixels in an image
+                </li>
+            </ul>
+            <h4>
+                function pictureFromImage(image)
+            </h4>
+            <ul>
+                <li>
+                    will draw picture to canvas element
+                    <br>
+                    canvas context has getImageData method
+                    <br>
+                    allows script to read its pixels
+                    <br>
+                    once picture is on canvas we can construct
+                    <br>
+                    a Picture object
+                </li>
+                <li>
+                    data property returned by getImageData 
+                    <br>
+                    is array of color components
+                    <br>
+                    contains four values that represent red, green, blue
+                    <br>
+                    and alpha components of pixels color as numbers 0 and 255
+
+                </li>
+                <li>
+                    hex helper function calls padStart to add a leading 0
+                    when necessary
+                </li>
+            </ul>
+            <ul>
+                <li>
+
+                </li>
+            </ul>
+        </li>
+            
+        <li>
+            Undo History
+            
+        </li>
+        <li>
+            Let's Draw
+        </li>
+        <li>
+            Why is this so hard
+        </li>
+        <li>
+            Excercises
+        </li>
+    </ol>
+    
+</body>
+</html>
