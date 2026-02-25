@@ -219,22 +219,72 @@ Content-Length: 92
                     <br>
                     with 304 status when request has waited long enough
                 </li>
+                <li>
+                    updated increases version property wakes all waiting requests
+                </li>
             </ul>
         </li>
         <li>
             The Client
             <ul>
+                
                 <li>
                     HTML
                 </li>
                 <li>
                     Actions
+                    <ul>
+                        <li>
+                            application state consists of list of talks
+                            <br>
+                            and name of user store in {talks, user} object
+                        </li>
+                        <li>
+                            handleAction function = actions that describe what the 
+                            <br>
+                            user is doing
+                            <br>
+                            state changes handled in same function
+                        </li>
+                        <li>
+                            user name stored in localStorage = restores page when 
+                            <br>
+                            loaded. 
+                        </li>
+                        <li>
+                            promise is rejected when server returns error code
+                        </li>
+                        
+                        <li>
+
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    Rendering Components
+                    <h3>Rendering Components</h3>
+                    <ul>
+                       <li>
+                            define function that return a DOM node ( ex, fields where user can 
+                            <br>
+                            can enter name )
+                        </li>
+                        <li>
+                            JSX = allows you to write something closer to HTML
+                            <br>
+                            as if JavaScript expressions
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    Polling
+                    <h3>Polling</h3>
+                    <ul>
+                        <li>
+                            polling the server for /talks. 
+                            <br>
+                            callback function when new talks available
+                        </li>
+                    </ul>
+
                 </li>
                 <li>
                     Application
