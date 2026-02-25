@@ -118,15 +118,106 @@ Content-Length: 92
                     used to give access to server state
                 </li>
                 <h4>serving files</h4>
+                <li>
+                    serve-static
+                </li>
+                <li>
+                    serveFromRouter = exports function 
+                    <br>
+                    <li>
+                        takes arguments (request, response, text)
+                    </li>
+                    <li>
+                        handlers in tjeins
+                    </li>
+                    called with root directory
+                    <br>
+                    produces request handler function
+                    <br>
+                    handler function accepts request 
+                    <br>
+                    and response (ex node:http)
+                    <br>
+                    third argument function that it will
+                    <br>
+                    call if no files matches request
+                    <br>
+                    server checks for requests to 
+                    <br>
+                    handlers in router return promises
+                    <br>
+                    to resolve to objects describing
+                </li> 
+                <li>
+<br>                    </br>
+                    <ul>
+                        <li>
+
+                        </li>
+                    </ul>
+                </li>
 
                 <h4>talks as resources</h4>
                 <li>
+                    handlers to expose HTTP sources under /talks/
                 </li>
                 <li>
-                    Long polling support
+                    handlers that GET a single talk must look up talk
+                    <br>
+                    respond with talks JSON data or 404 response
+                </li>
+                <li>
+                    deleting talk is done by removing it from talks object
+                </li>
+                <li>
+                    PUT handler checks dat it was given has presenter
+                    <br>
+                    and summary properties which are strings
+                    <br>
+                    if valid handler stores an object represents new talk
+                    <br>
+                    in talks object overwrites existing talk with title
+                    <br>
+                    calls updated
+                </li>
+                <li>
+                    node:stream/consumers = collects data in stream 
+                    <br>
+                    parses as JSON
+                    <br>
+                    also text(to read content as string) buffer(to read as binary data)
+                </li>
+                <li>
+                    readJSON = gets content of request, validates data stored as a comments
+                    <br>
+                    when it looks valid 
                 </li>
                 <li>
 
+                </li>
+                <li>
+                </li>
+                <h3>Long polling support</h3>
+
+                <li>
+                    to send array of talks define helper method that
+                    <br>
+                    builds up array includes ETag header in response
+                </li>
+                <li>
+                    handler looks at request headers
+                    <br>
+                    checks If-None-Match and Prefer headers are present
+                    <br>
+                    Node stores headers, names are specified to be 
+                    <br>
+                    case sensitive
+                    
+                </li>
+                <li>
+                    waitForChanges method sets timer responds 
+                    <br>
+                    with 304 status when request has waited long enough
                 </li>
             </ul>
         </li>
