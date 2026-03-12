@@ -311,28 +311,79 @@
                     setTimout
                 </li>
                 <li>
+                    clearTimeout = cancels scheduled function
+                </li>
+                <li>
+                    cancelAnimationFrame = cancels frame
+                </li>
+                <li>
                     clearTimeout
                 </li>
-                <li>
-                    cancelAnimationFrame
-                </li>
-                <li>
-                    clearTimeout
-                </li>
-                <li>
-                    setInterval
-                </li>
-                <li>
-                    clearInterval
-                </li>
-                
+                <p>
+                    <li>
+                        setInterval
+                    </li>
+                    <li>
+                        clearInterval
+                    </li>
+                    <ul>
+                        sets timers that should repeat
+                        <br>
+                        every X milliseconds
+                    </ul>
+                </p>
+
             </ul>
         </li>
         <li>
             <h3>Debouncing </h3>
+            <ul>
+                <li>
+                    debouncing the event =  setTimout to make
+                    sure you are not doing it too often
+                </li>
+                <li>
+                    space reponses seperated during 
+                    <br>
+                    series of events ( show current coordinates
+                    <br>
+                    of mouse
+                    <br>
+                    only every 250 milliseconds
+                    )
+                </li>
+            </ul>
         </li>
         <li>
             <h3>Summary </h3>
+            <li>
+                event handlers make it possible to detect
+                <br>
+                and react to events
+                <br>
+            </li>
+            <li>
+                addEventListner = used to register such a handler
+            </li>
+            <li>
+                handler is called passes event object
+                <br>
+                with additional information
+            </li>
+            <li>
+                events have a type (keydown, focus) that
+                <br>
+                thath identifies it
+                <br>
+                events are called specific DOM propogate 
+                to elements ancestors
+            </li>
+            <li>
+                stopPropagation = method to stop propagation
+            </li>
+            <li>
+                preventPropagation = method to stop propagation
+            </li>
         </li>
         <li>
             <h3>Excercises </h3>

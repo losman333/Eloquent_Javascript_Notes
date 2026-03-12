@@ -81,8 +81,9 @@
         </li>
     </ol>
     <code><pre>
+    //
     const wobbleSpeed = 8, wobbleDist = 0.07;
-
+    
     Coin.prototype.update = function(time) {
     let wobble = this.wobble + time * wobbleSpeed;
     let wobblePos = Math.sin(wobble) * wobbleDist;

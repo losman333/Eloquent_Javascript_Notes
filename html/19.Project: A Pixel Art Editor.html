@@ -418,6 +418,17 @@
 
                 </li>
                 <li>
+                    color notation corresponds to 0 to 255 - two base-16
+                    <br>
+                    digits can express 16<sup>2</sup> = 256 different numbers
+                    <br>
+                </li>
+                <li>
+                    n.toString(16) will produce a string representation
+                    <br>
+                    in base 16
+                </li>
+                <li>
                     hex helper function calls padStart to add a leading 0
                     when necessary
                 </li>
@@ -430,12 +441,53 @@
         </li>
             
         <li>
-            Undo History
+            <h3>Undo History</h3>
+            <ul>
+                <li>
+                    done array keeps previous version of picture
+                </li>
+                <li>
+                    doneAt to track time which we last stored a picture
+                    <br>
+                    in the history
+                </li>
+                <b>function historyUpdateSate(state, action)</b>
+                <li>
+                    done and doneAt store previous picture, if action
+                    <br>
+                    contains a new picture and the last time we stored
+                    <br>
+                    something more than a (1000 milliseconds) ago
+                </li>
+                <li>
+                    undo button dispatches undo action when clicked
+                    <br>
+                    disables when there is nothing to do
+                </li>
+                <b> class UndoButton </b>
+            </ul>
             
         </li>
         <li>
-            Let's Draw
+            <h3>Let's Draw</h3>
+            <ul>
+                <li>
+                    PixelEditor constructor creates main component
+                    <br>
+                    define bindings to create several editors in exercises
+                </li>
+                <li>
+                    when destructuring object or array, you can use <b>=</b> after
+                    <br>
+                    binding name to give binding a default value when property
+                    <br>
+                    holds undefined. startPixelEditor uses = to accept object 
+                    <br>
+                    with additional properties
+                </li>
+            </ul>
         </li>
+
         <li>
             Why is this so hard
         </li>

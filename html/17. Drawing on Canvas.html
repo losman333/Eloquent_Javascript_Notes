@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing on Canvas</title>
+</head>
+<body>
+    <ol>
+        <li>
+            <h3>
+                Svg
+            </h3>
+            <ul>
+                <li>
+                    bitmap
+                </li>
+                <li>
+                    drawImage <img>
+                </li>
+                <li>
+                    "load" event handler
+                </li>
+                <li>
+                    drawImage = nine arguements 
+                    <br>
+                    (rectangle (x, y, witdh, height))
+                    <br>
+                    six to nine = give rectangle wich
+                    <br> 
+                    it should be copied
+                    
+                </li>
+                <li>
+                    clearRect = removes previous drawn pixels
+                </li>
+                <li>
+                    cycle binding tracks position in animation
+
+                    for each frame incremented then clipped back 
+                    0 to 7 range by using remainer operator
+                    binding used to compute x-coordinate
+                    that sprite has for current pose in picture
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>
+                The Canvas Element
+            </h3>
+            <li>
+                canvas tag
+            </li>
+            <li>
+                getContext method
+            </li>
+        </li>
+        <li>
+            <h3>
+                Lines and Surfaces
+            </h3>
+            <ul>
+                <li>
+                    fillRect = fills rect
+                </li>
+                <li>
+                    strokeRect = draws outline
+                    <br>
+                    cx.strokeRect(5, 5, 50, 50);
+                </li>
+                <li>
+                    property of context object determine look of
+                </li>
+                fillStyle = controls ways shapes (strings specify color, 
+                <br>
+                use color notation)
+                <li>
+                    strokeStyle = determines color used for
+                    <br>
+                    stroked line (width determeinedn by Linewidth
+                    <br>
+                    property
+                    )
+                    <b>cx.strokeStyle = "blue";</b>
+                
+                </li>
+            
+            </ul>
+        </li>
+        <li>
+            <h3>
+                Paths
+            </h3>
+            <li>
+                stroke method
+            </li>
+            <li>
+                lineTo = starts at current position
+            </li>
+            <li>
+                moveTo
+            </li>
+            <li>
+                fill path with fill method (path needs to be closed)
+            </li>
+            <code>
+                <pre>
+                    let cx = document.querySelector("canvas").getContext("2d")
+                    cx.beginPath();
+                    cx.moveTo();
+                    cx.lineTo();
+                    cx.fill();
+                </pre>
+            </code>
+        </li>
+        <li>
+            <h3>
+                Curves
+            </h3>
+
+            <ul>
+                <li>
+                    control point
+                </li>
+                <li>
+                    attracting line
+                </li>
+                <li>
+                    bezierCurveTo
+                </li>
+                <li>
+                    arch method
+                </li>
+                <li>
+                    Math.PI
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Drawing a Pie Chart</h3>
+            <ul>
+                <li>
+                    draw number of pie plces
+                    <ul>
+                        <li>each arc dividing full circle 
+                            <br>
+                            by total number of responses
+                            <br>
+                            multiplying angle per response
+                            <br>
+                            by number of people who picked given choice
+                        </li>
+                        
+                        <li>
+
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>
+                Text
+            </h3>
+            <ul>
+                <li>
+                    fillText
+                </li>
+                <li>
+                    strokeText
+                </li>
+                <li>textAlign = end or center</li>
+                <li>
+                    textBaseline = top, middle, bottom
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>
+                Images
+            </h3>
+            <ul>
+                <li>
+                    drawImage = draw pixel data on canvas
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>
+                Transformation
+            </h3>
+            <li>
+                scale
+            </li>
+            <li>rotate</li>
+            <li>
+                translate = moves shapes
+            </li>
+            <li>
+                transformation stack
+            </li>
+
+        </li>
+        <li>
+            <h3>
+                Storing and Clearning Transformations
+            </h3>
+            <ul>
+                <li>
+                    save and restore methods
+                    cx.save()
+                    cx.restore()
+                </li>
+                <li>
+                    resetTransform = resets transformation
+                </li>
+                <li>
+                    branch function = 
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>
+                Back to the Game
+            </h3>
+            <ul>
+                use drawImage to draw pictures
+                <br>
+                that represent games elements
+                <li>
+                    define another display called CanvasDisplay
+                    <br>
+                    - tracks own viewport
+                    <br>
+                    - keeps flipPlayer property
+                    <br>
+                    - keeps facing direction which it last moved
+                </li>
+                <li>
+                    syncState method computes new viewport
+                    <br>
+                    - draws game scene at appropiate position
+                </li>
+                <li>
+                    updateViewPort = checks whetherh player 
+                    <br>
+                    too close to edge of screen
+                </li>
+                <li>
+                    Math.max Math.min used for viewport
+                    <br>
+                    to ensure viewport does not end 
+                    <br>
+                    showing space outside of level Math.max(x, 0)
+                    <br>
+                    <li>
+                        drawBackground
+                    </li>
+                    <li>
+                        drawImage
+                    </li>
+                    <li>
+                        drawPlayer method called by drawActors
+                    </li>
+                    <li>
+                        
+                    </li>
+                </li>
+
+            </ul>
+        </li>
+        <li>
+            <h3>
+                choosing a graphics interface
+            </h3>
+            <ul>
+                <li>
+                    html simple intergrates well with text
+                </li>
+                <li>
+                    svg = crisp graphics that look good zoomed in
+                    <br>
+                    designed for drawing
+                </li>
+                <li>
+                    canvas uses pixel oriented approach
+                    <br>
+                    <ul>
+                        <p>
+                            <li>
+                                better for drawing high number
+                                  <br>
+                                  of smaller elements
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                repeatedly draws onto sampe pixel
+                                <br>
+                                surface
+                            </li>
+                        </p>
+                        <li>
+                            registers mouse event handlers
+                            <br>
+                            on every element in picture
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>
+                summary
+            </h3>
+            
+        </li>
+        <li>
+            <h3> Excercises</h3>
+            <ol>
+                <li>
+                    shapes
+                </li>
+                <li>
+                    the pie chart
+                </li>
+                <li>
+                    A bouncing ball
+                </li>
+            </ol>
+        </li>
+    </ol>
+</body>
+</html>

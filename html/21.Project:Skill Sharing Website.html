@@ -283,11 +283,47 @@ Content-Length: 92
                             <br>
                             callback function when new talks available
                         </li>
+                        <li>
+                            use async function to poll server
+                            <ol>
+                                <li>
+                                    loops on each iteration retrive list of talks
+                                    <br>
+                                    waits a moment tries again. Application can recover
+                                    <br>
+                                    continue updating
+                                    <br>
+                                    promise resolved via setTimeout 
+                                    <br>
+                                    a way to force async function to wait
+                                </li>
+                                <li>
+                                    with time outs function starts next request
+                                    <br>
+                                    normal 200 response body read as JSON passed to callback
+                                    <br>
+                                    ETag header value stored for next iteration
+                                </li>
+                            </ol>
+                        </li>
                     </ul>
 
                 </li>
                 <li>
                     Application
+                    <ul>
+                        <li>
+                            handleAction
+                        </li>
+                        <li>
+                            wrapper function fetchOK makes sure promise is rejected 
+                            <br>
+                            when server returns error code
+                        </li>
+                        <li>
+                            
+                        </li>
+                    </ul>
                 </li>
                 
             </ul>

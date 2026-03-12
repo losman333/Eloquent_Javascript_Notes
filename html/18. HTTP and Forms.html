@@ -387,7 +387,7 @@
                      error obejct will end up in readers error property
                      <br>
                      <code>
-                        <pre>
+<pre>
     function readFileText(file) {
   return new Promise((resolve, reject) => {
     let reader = new FileReader();
@@ -407,6 +407,43 @@
             <h3>
                 Storing Data Client-Side
             </h3>
+            <ul>
+                <li>
+                    localStoarge = used to store data
+                    <br>
+                    <b>localStorage.setItem("username", "marign")</b>
+                    <br>
+                    in order to survive page reloads
+                </li>
+                <li>
+                    value is overwritten with remove.Item
+                    <br>
+                    <b>localStorage.removeItem("username");</b>
+                </li>
+                <li>
+                    browsers enforce limit on size of data
+                </li>
+                <li>
+                    setState method = DOM shows a given state
+                    <br>
+                    stores new state to localStorage
+                </li>
+                <li>
+                    ...syntax used to create a new object that is clone
+                    <br>
+                    of old state.notes
+                </li>
+                [square brackets notation in object literal used to create 
+                <br>
+                property whose name is based on some dynamic value  ]
+                <li>
+                    local storage vs session storage 
+                    <br>
+                    local saves data until cleared
+                    <br>
+                    session save until browser is cleared 
+                </li>
+            </ul>
         </li>
         <li>
             <h3>
